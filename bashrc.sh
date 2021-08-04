@@ -113,9 +113,9 @@ __prompt_command() {
 
     if [ $EXIT != 0 ]; then
         # red when failed
-        PS1+="${txtred}\t \w ${txtrst}"
+        PS1+="${txtred}\w ${txtrst}"
     else
-        PS1+="${txtgrn}\t \w ${txtrst}"
+        PS1+="${txtgrn}\w ${txtrst}"
     fi
 
     PS1+="λ "
