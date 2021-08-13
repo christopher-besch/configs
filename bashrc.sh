@@ -6,39 +6,59 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias bat=batcat
 alias py=python3
-alias jabref='~/Desktop/JabRef/bin/JabRef'
-alias icat="kitty +kitten icat"
-alias school=~/12/maintenance.sh
-alias sup=sup-mail
-alias gephi='~/Desktop/gephi-0.9.2/bin/gephi --jdkhome /usr/lib/jvm/java-8-openjdk-amd64/ -J-Xms256m -J-Xmx2048m'
+alias icat='kitty +kitten icat'
 alias vi='nvim'
 alias chmod='chmod --preserve-root'
+
+alias ls='exa --icons --group-directories-first'
+unalias l
+alias ll='exa --icons --group-directories-first -alF'
+alias la='exa --icons --group-directories-first -a'
+
+# move through folders with j and k
+function j() {
+    if [ "$#" -ne 1 ]; then
+        echo "target folder must be given"
+        return 1
+    fi
+    pushd "$1" > /dev/null
+    return $?
+}
+function k() {
+    popd > /dev/null
+    return $?
+}
 
 function mkcd() {
     mkdir "$1"
     cd "$1"
+    return $?
 }
 
 function pdfcomp() {
     for file in "$@"; do
         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"
     done
+    return $?
 }
 
 function ocrde() {
     for file in "$@"; do
         ocrmypdf --language deu "$file" "$file"
     done
+    return $?
 }
 function ocren() {
     for file in "$@"; do
         ocrmypdf --language eng "$file" "$file"
     done
+    return $?
 }
 function ocrdeen() {
     for file in "$@"; do
         ocrmypdf --language eng+deu "$file" "$file"
     done
+    return $?
 }
 
 function topdf() {
@@ -46,6 +66,7 @@ function topdf() {
         echo "converting $file"
         unoconv -f pdf --export=ExportFormFields=false "$file"
     done
+    return $?
 }
 
 function totxt() {
@@ -53,6 +74,7 @@ function totxt() {
         echo "converting $file"
 	pdftotext -layout "$file"
     done
+    return $?
 }
 
 function find_empty() {
@@ -63,11 +85,10 @@ function find_empty() {
         fi
     done 
     IFS=$' \t\n'
+    return $?
 }
 
 export HISTSIZE=1000000
-# PS1='${debia_chroot:+($debian_chroot)}\[\033[01;34m\]\w\[\033[00m\] λ '
-# PS1="\A \$? \w\[$(tput sgr0)\] λ "
 
 PROMPT_COMMAND=__prompt_command
 
@@ -119,5 +140,6 @@ __prompt_command() {
     fi
 
     PS1+="λ "
+    return $?
 }
 
