@@ -1,5 +1,9 @@
 #!/bin/bash
 
+HISTSIZE=1000000
+HISTFILESIZE=1000000
+force_color_prompt=yes
+
 alias please=sudo
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -11,7 +15,7 @@ alias vi='nvim'
 alias chmod='chmod --preserve-root'
 
 alias ls='exa --icons --group-directories-first'
-unalias l
+alias l='echo "Prepare for unforeseen consequencesλ"'
 alias ll='exa --icons --group-directories-first -alF'
 alias la='exa --icons --group-directories-first -a'
 
@@ -88,10 +92,7 @@ function find_empty() {
     return $?
 }
 
-export HISTSIZE=1000000
-
 PROMPT_COMMAND=__prompt_command
-
 __prompt_command() {
     # get exit code
     local EXIT="$?"
