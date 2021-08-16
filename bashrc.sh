@@ -4,6 +4,8 @@ HISTSIZE=1000000
 HISTFILESIZE=1000000
 force_color_prompt=yes
 
+ulimit -c unlimited
+
 alias please=sudo
 alias ..='cd ..'
 alias ...='cd ../..'
