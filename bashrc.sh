@@ -12,7 +12,8 @@ alias ....='cd ../../..'
 # alias bat=batcat
 alias py=python3
 alias icat='kitty +kitten icat'
-alias vi='nvim'
+alias vi='lvim'
+export EDITOR='lvim'
 alias chmod='chmod --preserve-root'
 
 alias ls='exa --icons --group-directories-first'
@@ -97,17 +98,15 @@ PROMPT_COMMAND=__prompt_command
 __prompt_command() {
     # get exit code
     local EXIT="$?"
-    PS1=""
 
     if [ $EXIT != 0 ]; then
         # red when failed
         # PS1+="${txtred}\w ${txtrst}"
-        PS1+="\[\033[01;31m\]\w \[\033[0m\]"
+        PS1="\[\033[01;31m\]\w \[\033[0m\]λ "
     else
         # PS1+="${txtgrn}\w ${txtrst}"
-        PS1+="\[\033[01;32m\]\w \[\033[0m\]"
+        PS1="\[\033[01;32m\]\w \[\033[0m\]λ "
     fi
 
-    PS1+=" λ "
-    return $?
+    return $EXIT
 }
