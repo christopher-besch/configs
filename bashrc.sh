@@ -4,6 +4,7 @@
 # HISTFILESIZE=100000
 
 # ulimit -c unlimited
+set -o vi
 
 alias please=sudo
 alias ..='cd ..'
