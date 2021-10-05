@@ -5,6 +5,8 @@
 
 # ulimit -c unlimited
 set -o vi
+export EDITOR='lvim'
+export GPG_TTY=$(tty)
 
 alias please=sudo
 alias ..='cd ..'
@@ -14,7 +16,6 @@ alias ....='cd ../../..'
 alias py=python3
 alias icat='kitty +kitten icat'
 alias vi='lvim'
-export EDITOR='lvim'
 alias chmod='chmod --preserve-root'
 
 alias ls='exa --icons --group-directories-first'

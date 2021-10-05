@@ -1,0 +1,9 @@
+[credential]
+    helper = store
+[user]
+    email = christopher.besch@gmx.de
+    name = christopher-besch
+[commit]
+    gpgsign = true
+[include]
+    path = ~/.gitconfig_key
