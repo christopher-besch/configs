@@ -12,4 +12,4 @@ ln -s $DIR/.gdbinit ~/.gdbinit
 rm ~/.gitconfig || true
 ln -s $DIR/.gitconfig ~/.gitconfig
 
-echo 'source "$DIR/.bashrc"' >> ~/.bashrc
+echo "source $DIR/.bashrc" >> ~/.bashrc
