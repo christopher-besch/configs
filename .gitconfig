@@ -1,9 +1,17 @@
 [credential]
-    helper = store
+	helper = store
 [user]
-    email = christopher.besch@gmx.de
-    name = christopher-besch
+	email = christopher.besch@gmx.de
+	name = christopher-besch
+	signinkey = rsa4096
+	signingkey = 38AC692F
 [commit]
-    gpgsign = true
+	gpgSign = true
 [include]
     path = ~/.gitconfig_key
+[tag]
+	gpgSign = true
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main

@@ -24,7 +24,7 @@ BinPackArguments: 'true'
 BinPackParameters: 'true'
 BreakAfterJavaFieldAnnotations: 'true'
 BreakBeforeBinaryOperators: None
-BreakBeforeBraces: Custom
+BreakBeforeBraces: Stroustrup
 BreakBeforeTernaryOperators: 'false'
 BreakConstructorInitializers: BeforeColon
 BreakInheritanceList: BeforeColon
@@ -40,7 +40,7 @@ DerivePointerAlignment: 'false'
 DisableFormat: 'false'
 ExperimentalAutoDetectBinPacking: 'false'
 FixNamespaceComments: 'true'
-IncludeBlocks: Regroup
+IncludeBlocks: Preserve
 IndentCaseLabels: 'false'
 IndentPPDirectives: None
 IndentWidth: '4'
