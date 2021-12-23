@@ -10,3 +10,6 @@ set history save on
 set print pretty on
 # memory go brrrrr
 set record full insn-number-max unlimited
+
+# has to be set to correct include dir
+skip -gfi /usr/include/c++/11.1.0/bits/*.h
