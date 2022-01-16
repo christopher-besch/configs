@@ -12,10 +12,10 @@ ln -s $DIR/.gdbinit ~/.gdbinit
 rm ~/.gitconfig || true
 ln -s $DIR/.gitconfig ~/.gitconfig
 
-rm ~/.indentconfig || true
+rm ~/.indentconfig.yaml || true
 cat <<EOF > ~/.indentconfig.yaml
 paths:
-  - $HOME/latexindent_config.yaml
+  - $DIR/latexindent_config.yaml
 EOF
 
 echo "source $DIR/.bashrc" >> ~/.bashrc
