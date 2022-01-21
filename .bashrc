@@ -5,7 +5,8 @@
 
 # ulimit -c unlimited
 set -o vi
-export EDITOR='lvim'
+export EDITOR='vi'
+export TERM='xterm'
 export GPG_TTY=$(tty)
 
 alias please=sudo
@@ -14,14 +15,14 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 # alias bat=batcat
 alias py=python3
-alias icat='kitty +kitten icat'
-alias vi='lvim'
+# alias icat='kitty +kitten icat'
+# alias vi='lvim'
 alias chmod='chmod --preserve-root'
 
-alias ls='exa --icons --group-directories-first'
-alias l='echo "Prepare for unforeseen consequencesλ"'
-alias ll='exa --icons --group-directories-first -alF'
-alias la='exa --icons --group-directories-first -a'
+# alias ls='exa --icons --group-directories-first'
+# alias l='echo "Prepare for unforeseen consequencesλ"'
+# alias ll='exa --icons --group-directories-first -alF'
+# alias la='exa --icons --group-directories-first -a'
 
 # move through folders with j and k
 function j() {
@@ -104,10 +105,10 @@ __prompt_command() {
     if [ $EXIT != 0 ]; then
         # red when failed
         # PS1+="${txtred}\w ${txtrst}"
-        PS1="\[\033[01;31m\]\w \[\033[0m\]λ "
+        PS1="\[\033[01;31m\]server \w \[\033[0m\]λ "
     else
         # PS1+="${txtgrn}\w ${txtrst}"
-        PS1="\[\033[01;32m\]\w \[\033[0m\]λ "
+        PS1="\[\033[01;32m\]server \w \[\033[0m\]λ "
     fi
 
     return $EXIT
