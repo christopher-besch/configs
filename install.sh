@@ -9,8 +9,8 @@ ln -s $DIR/.clang-format ~/.clang-format
 rm ~/.gdbinit || true
 ln -s $DIR/.gdbinit ~/.gdbinit
 
-rm ~/.gitconfig || true
-ln -s $DIR/.gitconfig ~/.gitconfig
+# rm ~/.gitconfig || true
+# ln -s $DIR/.gitconfig ~/.gitconfig
 
 rm ~/.indentconfig.yaml || true
 cat <<EOF > ~/.indentconfig.yaml
