@@ -1,1 +1,15 @@
+# vi mode for stuff like GDB
 set editing-mode vi
+
+# edit command keybinds
+set keymap vi-command
+# history backtrace don't everwrite already written part
+# INFO: type a space before exiting insert <- last char get's ignored
+"K":  history-search-backward
+"J":  history-search-forward
+"gg": beginning-of-history
+"G":  end-of-history
+
+# different colors on completion
+set colored-stats on
+set completion-prefix-display-length 3
