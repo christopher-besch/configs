@@ -3,7 +3,7 @@ set editing-mode vi
 
 # edit command keybinds
 set keymap vi-command
-# history backtrace don't everwrite already written part
+# history backtrace don't overwrite already written part
 # INFO: type a space before exiting insert <- last char get's ignored
 "K":  history-search-backward
 "J":  history-search-forward
