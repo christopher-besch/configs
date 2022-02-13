@@ -15,6 +15,9 @@ ln -vs $DIR/.gitconfig ~/.gitconfig
 rm -v ~/.inputrc || true
 ln -vs $DIR/.inputrc ~/.inputrc
 
+rm -v ~/.Xmodmap || true
+ln -vs $DIR/.Xmodmap ~/.inputrc
+
 rm -v ~/.indentconfig.yaml || true
 cat <<EOF > ~/.indentconfig.yaml
 paths:
