@@ -16,7 +16,7 @@ rm -v ~/.inputrc || true
 ln -vs $DIR/.inputrc ~/.inputrc
 
 rm -v ~/.Xmodmap || true
-ln -vs $DIR/.Xmodmap ~/.inputrc
+ln -vs $DIR/.Xmodmap ~/.Xmodmap
 
 rm -v ~/.indentconfig.yaml || true
 cat <<EOF > ~/.indentconfig.yaml
