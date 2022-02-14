@@ -6,23 +6,24 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 echo installing clang-format config
 ln -fvs $DIR/.clang-format ~/.clang-format
 
-echo installing gdb config
+echo installing GDB config
 ln -fvs $DIR/.gdbinit ~/.gdbinit
 
-echo installing git config
+echo installing Git config
+# only append include when not already done
 grep -E ' *path = .+/\gitconfig$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig\n" >> ~/.gitconfig
 
 echo installing inputrc config
 ln -fvs $DIR/.inputrc ~/.inputrc
 
-echo installing xfce config
+echo installing Xfce config
 ln -fvs $DIR/.Xmodmap ~/.Xmodmap
 ln -fvs $DIR/user-dirs.dirs ~/.config/user-dirs.dirs
 # create dump and dwn dirs
 mkdir -vp ~/.dump
 mkdir -vp ~/dwn
 
-echo installing indentconfig config
+echo installing latexindent config
 cat <<EOF > ~/.indentconfig.yaml
 paths:
   - $DIR/latexindent_config.yaml
@@ -47,5 +48,9 @@ rm -rvf ~/.config/kitty
 mkdir -vp ~/.config/kitty
 git clone https://github.com/dexpota/kitty-themes ~/.config/kitty
 ln -fvs $DIR/kitty.conf ~/.config/kitty/kitty.conf
+
+echo installing LunarVim config
+mkdir -vp ~/.config/lvim
+ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
 
 echo "All done! Have a nice day."
