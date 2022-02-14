@@ -1,7 +1,7 @@
 [credential]
 	helper = store
 [user]
-	email = christopher.besch@gmx.de
+	email = mail@chris-besch.com
 	name = christopher-besch
 [commit]
 	gpgSign = true
