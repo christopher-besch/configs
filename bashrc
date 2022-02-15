@@ -22,6 +22,7 @@ alias ls='exa --icons --group-directories-first'
 alias l='echo "Prepare for unforeseen consequencesλ"'
 alias ll='exa --icons --group-directories-first -alF'
 alias la='exa --icons --group-directories-first -a'
+alias fox='firefox'
 
 # move through folders with j and k
 function j() {
