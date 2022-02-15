@@ -53,4 +53,10 @@ echo installing LunarVim config
 mkdir -vp ~/.config/lvim
 ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
 
+echo installing LunarVim German Spelling
+# fixes a bug: https://github.com/LunarVim/LunarVim/issues/1445
+mkdir -p ~/.local/share/lunarvim/site/spell
+ln -fvs $DIR/vendor/de.utf-8.spl ~/.local/share/lunarvim/site/spell/de.utf-8.spl
+ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
+
 echo "All done! Have a nice day."
