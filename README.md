@@ -2,6 +2,13 @@
 
 - clone this repo and run `./install.sh`
 
+# Configs
+
+- Bash
+- Git
+- LunarVim
+- ...
+
 # Resources
 
 - [clang-format-configurator](https://zed0.co.uk/clang-format-configurator)
