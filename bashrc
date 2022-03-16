@@ -53,19 +53,19 @@ function mkcd() {
 
 # function ocrde() {
 #     for file in "$@"; do
-#         ocrmypdf --language deu "$file" "$file"
+#         ocrmypdf --language deu --force-ocr "$file" "$file"
 #     done
 #     return $?
 # }
 # function ocren() {
 #     for file in "$@"; do
-#         ocrmypdf --language eng "$file" "$file"
+#         ocrmypdf --language eng --force-ocr "$file" "$file"
 #     done
 #     return $?
 # }
 # function ocrdeen() {
 #     for file in "$@"; do
-#         ocrmypdf --language eng+deu "$file" "$file"
+#         ocrmypdf --language eng+deu --force-ocr "$file" "$file"
 #     done
 #     return $?
 # }
