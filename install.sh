@@ -13,6 +13,9 @@ echo installing Git config
 # only append include when not already done
 grep -E ' *path = .+/\gitconfig$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig\n" >> ~/.gitconfig
 
+echo installing gpg config
+ln -fvs $DIR/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+
 echo installing inputrc config
 ln -fvs $DIR/.inputrc ~/.inputrc
 
