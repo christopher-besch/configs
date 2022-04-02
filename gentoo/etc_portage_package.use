@@ -1,0 +1,5 @@
+# used for Keepass2
+dev-lang/mono minimal
+# install everything
+app-text/texlive *
+app-text/texlive-core xetex
