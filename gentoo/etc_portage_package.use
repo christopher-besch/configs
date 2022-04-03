@@ -3,3 +3,8 @@ dev-lang/mono minimal
 # install everything
 app-text/texlive *
 app-text/texlive-core xetex
+
+# required by media-video/vlc-3.0.16-r8::gentoo
+# required by media-video/vlc (argument)
+>=sys-libs/zlib-1.2.11-r4 minizip
+
