@@ -8,3 +8,8 @@ app-text/texlive-core xetex
 # required by media-video/vlc (argument)
 >=sys-libs/zlib-1.2.11-r4 minizip
 
+# required by app-emulation/libvirt-7.7.0-r2::gentoo[virt-network]
+# required by app-emulation/libvirt-glib-4.0.0::gentoo
+# required by app-emulation/virt-manager-3.2.0-r1::gentoo[-test]
+# required by app-emulation/virt-manager (argument)
+net-dns/dnsmasq script
