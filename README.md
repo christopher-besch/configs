@@ -1,13 +1,27 @@
 # How to Cook Like I Do?
 
-- clone this repo and run `./install.sh`
+1. Fork this repo,
+2. adjust the configs to your liking
+3. and run `./install.sh`.
+   (Warning: this script permanently overwrites your current configs.)
 
 # Configs
 
 - Bash
 - Git
 - LunarVim
+- GDB
+- clang-format
+- GPG
+- Kitty
+- latexindent
 - ...
+
+# Gentoo Config
+
+The [`gentoo` subdirectory](gentoo) contains my Gentoo configs.
+The same three-step plan applies to it, with an addition to the third:
+You have to run the `install.sh` script with root privileges (with `sudo`).
 
 # Resources
 
