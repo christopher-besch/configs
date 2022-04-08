@@ -13,3 +13,19 @@ app-text/texlive-core xetex
 # required by app-emulation/virt-manager-3.2.0-r1::gentoo[-test]
 # required by app-emulation/virt-manager (argument)
 net-dns/dnsmasq script
+
+# required by dev-python/scipy-1.8.0::gentoo[-test]
+# required by dev-python/uranium-4.12.1::gentoo[-test,python_single_target_python3_9]
+# required by media-gfx/cura-4.12.1::gentoo
+# required by media-gfx/cura (argument)
+>=dev-python/numpy-1.22.2 lapack
+# required by dev-python/PyQt5-5.15.4-r1::gentoo[multimedia]
+# required by dev-python/uranium-4.12.1::gentoo[-test,python_single_target_python3_9]
+# required by media-gfx/cura-4.12.1::gentoo
+# required by media-gfx/cura (argument)
+>=dev-qt/qtmultimedia-5.15.2-r2 widgets
+# required by dev-python/uranium-4.12.1::gentoo[-test,python_single_target_python3_9]
+# required by media-gfx/cura-4.12.1::gentoo
+# required by media-gfx/cura (argument)
+>=dev-python/PyQt5-5.15.4-r1 declarative
+
