@@ -8,6 +8,8 @@ set -o vi
 export EDITOR='lvim'
 export GPG_TTY=$(tty)
 
+export PATH="$HOME/.yarn/bin:$PATH"
+
 alias please=sudo
 alias ..='cd ..'
 alias ...='cd ../..'
