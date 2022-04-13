@@ -46,7 +46,7 @@ function mkcd() {
     return $?
 }
 
-function tex() {
+function ptex() {
     pdflatex *.tex && pdflatex *.tex && fox *.pdf
     return $?
 }
