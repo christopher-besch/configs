@@ -24,7 +24,7 @@ alias ls='exa --icons --group-directories-first'
 alias l='echo "Prepare for unforeseen consequencesλ"'
 alias ll='exa --icons --group-directories-first -alF'
 alias la='exa --icons --group-directories-first -a'
-alias fox='firefox'
+alias fox='firefox-bin'
 
 # move through folders with j and k
 function j() {
@@ -46,28 +46,22 @@ function mkcd() {
     return $?
 }
 
+function tex() {
+    pdflatex *.tex && pdflatex *.tex && fox *.pdf
+    return $?
+}
+function ltex() {
+    lualatex *.tex && lualatex *.tex && fox *.pdf
+    return $?
+}
+function xtex() {
+    xetex *.tex && xetex *.tex && fox *.pdf
+    return $?
+}
+
 # function pdfcomp() {
 #     for file in "$@"; do
 #         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"
-#     done
-#     return $?
-# }
-
-# function ocrde() {
-#     for file in "$@"; do
-#         ocrmypdf --language deu --force-ocr "$file" "$file"
-#     done
-#     return $?
-# }
-# function ocren() {
-#     for file in "$@"; do
-#         ocrmypdf --language eng --force-ocr "$file" "$file"
-#     done
-#     return $?
-# }
-# function ocrdeen() {
-#     for file in "$@"; do
-#         ocrmypdf --language eng+deu --force-ocr "$file" "$file"
 #     done
 #     return $?
 # }
