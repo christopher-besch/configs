@@ -29,3 +29,6 @@ net-dns/dnsmasq script
 # required by media-gfx/cura (argument)
 >=dev-python/PyQt5-5.15.4-r1 declarative
 
+# needed for gatsby develop
+net-libs/nodejs inspector
+
