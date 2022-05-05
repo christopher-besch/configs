@@ -59,12 +59,12 @@ function xtex() {
     return $?
 }
 
-# function pdfcomp() {
-#     for file in "$@"; do
-#         gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"
-#     done
-#     return $?
-# }
+function pdfcomp() {
+    for file in "$@"; do
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"
+    done
+    return $?
+}
 
 # function topdf() {
 #     for file in "$@"; do
