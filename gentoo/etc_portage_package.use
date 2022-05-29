@@ -32,3 +32,7 @@ net-dns/dnsmasq script
 # needed for gatsby develop
 net-libs/nodejs inspector
 
+# required by mail-client/thunderbird-91.9.1::gentoo[system-libvpx]
+# required by mail-client/thunderbird (argument)
+>=media-libs/libvpx-1.11.0 postproc
+
