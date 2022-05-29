@@ -16,3 +16,7 @@ set completion-prefix-display-length 3
 
 # no delay when pressing escape
 set keyseq-timeout 0
+
+# append / to symlinks
+set mark-symlinked-directories on
+
