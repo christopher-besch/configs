@@ -19,9 +19,9 @@ xkb_symbols "chris_keyboard" {
 
     key <CAPS> {        [         Escape                                        ]       };
 
-    // m-dash
+    // em-dash
     key <AB07> {        [         m,    M,     emdash                           ]       };
-    // n-dash
+    // en-dash
     key <AB06> {        [         n,    N,     endash                           ]       };
 
     include "level3(ralt_switch)"
