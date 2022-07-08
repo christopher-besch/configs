@@ -1,0 +1,29 @@
+// tutorial from https://lukaszzagroba.com/creating-a-custom-keyboard-layout-in-linux/
+// umlauts from https://www.mkammerer.de/blog/custom-keyboard-layouts-with-linux/
+
+xkb_symbols "chris_keyboard" {
+    include "gb(basic)"
+
+    name[Group1]= "English (GB, with Chris' extra keys)";
+
+    // Ä
+    key <AC01> {        [         a,    A,      adiaeresis,     Adiaeresis      ]       };
+    // Ö
+    key <AD09> {        [         o,    O,      odiaeresis,     Odiaeresis      ]       };
+    // Ü
+    key <AD07> {        [         u,    U,      udiaeresis,     Udiaeresis      ]       };
+    // ß
+    key <AC02> {        [         s,    S,      ssharp                          ]       };
+    // €
+    key <AD03> {        [         e,    E,      EuroSign                        ]       };
+
+    key <CAPS> {        [         Escape                                        ]       };
+
+    // m-dash
+    key <AB07> {        [         m,    M,     emdash                           ]       };
+    // n-dash
+    key <AB06> {        [         n,    N,     endash                           ]       };
+
+    include "level3(ralt_switch)"
+};
+

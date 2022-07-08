@@ -1,4 +1,0 @@
-! make caps key perform escape action
-remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
-

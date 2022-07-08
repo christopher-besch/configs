@@ -20,7 +20,6 @@ echo "installing inputrc config"
 ln -fvs $DIR/.inputrc ~/.inputrc
 
 echo "installing Xfce config"
-ln -fvs $DIR/.Xmodmap ~/.Xmodmap
 ln -fvs $DIR/user-dirs.dirs ~/.config/user-dirs.dirs
 # create dump and dwn dirs
 mkdir -vp ~/.dump
@@ -63,7 +62,7 @@ ln -fvs $DIR/vendor/de.utf-8.spl ~/.local/share/lunarvim/site/spell/de.utf-8.spl
 ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
 
 echo "installing custom keyboard layout; please enter sudo password"
-sudo ln -fvs $DIR/gb_umlauts /usr/share/X11/xkb/symbols/gb_umlauts
+sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
 
 echo "All done! Have a nice day."
 
