@@ -1,0 +1,14 @@
+xkb_symbols "umlauts" {
+    include "gb(basic)"
+
+    name[Group1]= "English (GB, with umlauts)";
+
+    key <AC01> {        [         a,    A,      adiaeresis,     Adiaeresis      ]       };
+    key <AD09> {        [         o,    O,      odiaeresis,     Odiaeresis      ]       };
+    key <AD07> {        [         u,    U,      udiaeresis,     Udiaeresis      ]       };
+    key <AC02> {        [         s,    S,      ssharp                          ]       };
+    key <AD03> {        [         e,    E,      EuroSign                        ]       };
+
+    include "level3(ralt_switch)"
+};
+
