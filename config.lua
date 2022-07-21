@@ -80,13 +80,11 @@ lvim.builtin.which_key.mappings["r"] = { "<cmd>set invspell<CR>", "Toggle Spell"
 lvim.builtin.which_key.mappings["R"] = { "<cmd>set spelllang=de<CR>", "German Spell" }
 -- you might have to download from https://ftp.nluug.nl/pub/vim/runtime/spell/de.utf-8.spl into https://neovim.io/doc/user/options.html#'runtimepath'
 
--- handle stupid german umlauts
--- todo: partly broken
-lvim.builtin.which_key.vmappings["a"] = { "<cmd>'<,'>s/ae/ä/g<CR>", "Replace ae" }
-lvim.builtin.which_key.vmappings["o"] = { "<cmd>'<,'>s/oe/ö/g<CR>", "Replace oe" }
-lvim.builtin.which_key.vmappings["u"] = { "<cmd>'<,'>s/ue/ü/g<CR>", "Replace ue" }
-lvim.builtin.which_key.vmappings["s"] = { "<cmd>'<,'>s/ss/ß/g<CR>", "Replace ss" }
-lvim.builtin.which_key.mappings["u"] = { "/ae\\|oe\\|ue\\|ss<CR>", "Find Umlauts" }
+lvim.builtin.which_key.mappings["a"] = {
+    name = "Hex Edit",
+    o = {":%!xxd<CR>:set ft=xxd<CR>", "Open"},
+    c = {":%!xxd -r<CR>:set ft&<CR>", "Close"},
+}
 
 -- sorting
 lvim.builtin.which_key.vmappings["r"] = {
