@@ -44,8 +44,12 @@ vim.opt.sidescrolloff = 8
 
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = true
+lvim.format_on_save = {
+    pattern = "*",
+}
 lvim.colorscheme = "onedarker"
+-- remove stupid deprecation warnings
+lvim.builtin.notify.active = false
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
