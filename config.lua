@@ -82,8 +82,8 @@ lvim.builtin.which_key.mappings["R"] = { "<cmd>set spelllang=de<CR>", "German Sp
 
 lvim.builtin.which_key.mappings["a"] = {
     name = "Hex Edit",
-    o = {":%!xxd<CR>:set ft=xxd<CR>", "Open"},
-    c = {":%!xxd -r<CR>:set ft&<CR>", "Close"},
+    o = { ":%!xxd<CR>:set ft=xxd<CR>", "Open" },
+    c = { ":%!xxd -r<CR>:set ft&<CR>", "Close" },
 }
 
 -- sorting
@@ -100,22 +100,29 @@ lvim.builtin.which_key.vmappings["r"] = {
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.show_icons.git = 0
 
 -- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = "maintained"
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
+-- lvim.builtin.treesitter.ensure_installed = "maintained"
+-- lvim.builtin.treesitter.ignore_install = { "haskell" }
+-- lvim.builtin.treesitter.highlight.enabled = true
 
-lvim.autocommands.custom_groups = {
-    -- set better wasm comments
-    { "BufEnter", "*.wat", ':lua vim.api.nvim_buf_set_option(0, "commentstring", ";; %s")' },
-    { "BufFilePost", "*.wat", ':lua vim.api.nvim_buf_set_option(0, "commentstring", ";; %s")' },
-}
+-- lvim.autocommands.custom_groups = {
+--     -- set better wasm comments
+--     { "BufEnter", "*.wat", ':lua vim.api.nvim_buf_set_option(0, "commentstring", ";; %s")' },
+--     { "BufFilePost", "*.wat", ':lua vim.api.nvim_buf_set_option(0, "commentstring", ";; %s")' },
+-- }
+
+-- TODO: do this instead because fuck legacy support I guess
+-- vim.api.nvim_create_autocmd("BufEnter", {
+-- 	  pattern = { "*.json", "*.jsonc" },
+-- 	  -- enable wrap mode for json files only
+-- 	  command = "setlocal wrap",
+-- })
 
 -- plugins
 lvim.plugins = {
-    {"farmergreg/vim-lastplace"},
+    { "farmergreg/vim-lastplace" },
 }
 
 -- local formatters = require "lvim.lsp.null-ls.formatters"
