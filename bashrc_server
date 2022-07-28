@@ -1,0 +1,71 @@
+#!/bin/bash
+
+set -o vi
+export EDITOR='vi'
+export TERM='xterm'
+export GPG_TTY=$(tty)
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+alias please=sudo
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias py=python3
+alias chmod='chmod --preserve-root'
+
+# move through folders with j and k
+function j() {
+    if [ "$#" -ne 1 ]; then
+        echo "target folder must be given"
+        return 1
+    fi
+    pushd "$1" > /dev/null
+    return $?
+}
+function k() {
+    popd > /dev/null
+    return $?
+}
+
+function mkcd() {
+    mkdir "$1"
+    cd "$1"
+    return $?
+}
+
+function ptex() {
+    pdflatex *.tex && pdflatex *.tex && fox *.pdf
+    return $?
+}
+function ltex() {
+    lualatex *.tex && lualatex *.tex && fox *.pdf
+    return $?
+}
+function xtex() {
+    xetex *.tex && xetex *.tex && fox *.pdf
+    return $?
+}
+
+function pdfcomp() {
+    for file in "$@"; do
+        gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"
+    done
+    return $?
+}
+
+PROMPT_COMMAND=__prompt_command
+__prompt_command() {
+    # get exit code
+    local EXIT="$?"
+
+    if [ $EXIT != 0 ]; then
+        # red when failed
+        # show hostname in server version
+        PS1="\[\033[01;31m\]\h \w \[\033[0m\]λ "
+    else
+        PS1="\[\033[01;32m\]\h \w \[\033[0m\]λ "
+    fi
+
+    return $EXIT
+}
