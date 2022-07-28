@@ -3,9 +3,6 @@ set -euo pipefail
 IFS=$' \n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-# install correct version
-# ([ -v $1 ] && [[ $1 == "server" ]]) && INSTALL_TYPE="server" || INSTALL_TYPE="desktop"
-
 if [[ -z ${1+x} ]]; then
     # default
     INSTALL_TYPE="desktop"
@@ -20,7 +17,6 @@ else
         exit 1
     fi
 fi
-
 echo "### installing chris' config for type: $INSTALL_TYPE ###"
 
 echo "installing clang-format config"
