@@ -14,6 +14,10 @@ alias ....='cd ../../..'
 alias py=python3
 alias chmod='chmod --preserve-root'
 
+alias l='echo "Prepare for unforeseen consequencesλ"'
+alias ll='ls -alF'
+alias la='ls -a'
+
 # move through folders with j and k
 function j() {
     if [ "$#" -ne 1 ]; then
