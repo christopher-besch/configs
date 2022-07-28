@@ -89,7 +89,7 @@ ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
 
 echo "installing custom keyboard layout; please enter sudo password"
 sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
-setxkbmap chris_keyboard
+setxkbmap chris_keyboard || true
 
 echo "All done! Have a nice day."
 
