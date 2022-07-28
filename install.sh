@@ -40,6 +40,7 @@ echo "installing inputrc config"
 ln -fvs $DIR/.inputrc ~/.inputrc
 
 echo "installing Xfce config"
+mkdir -p ~/.config
 ln -fvs $DIR/user-dirs.dirs ~/.config/user-dirs.dirs
 # create dump and dwn dirs
 mkdir -vp ~/.dump
