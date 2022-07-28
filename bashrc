@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# HISTSIZE=100000
-# HISTFILESIZE=100000
-
-# ulimit -c unlimited
 set -o vi
 export EDITOR='lvim'
 export GPG_TTY=$(tty)
