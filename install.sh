@@ -54,7 +54,7 @@ EOF
 
 echo "installing bashrc"
 # only append sourcing when not already done
-grep -E "source .+/bashrc_$INSTALL_TYPE\$" ~/.bashrc > /dev/null || echo "source $DIR/bashrc_$INSTALL_TYPE" >> ~/.bashrc
+grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bashrc_$INSTALL_TYPE" >> ~/.bashrc
 
 # font is installed in ssh client when connecting to server
 if [[ $INSTALL_TYPE != "server" ]]; then
