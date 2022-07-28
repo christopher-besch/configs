@@ -33,6 +33,7 @@ if [[ $INSTALL_TYPE != "server" ]]; then
 fi
 
 echo "installing gpg config"
+mkdir -p ~/.gnupg
 ln -fvs $DIR/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
 echo "installing inputrc config"
