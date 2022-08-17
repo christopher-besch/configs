@@ -124,6 +124,7 @@ lvim.builtin.nvimtree.setup.view.side = "left"
 -- 	  command = "setlocal wrap",
 -- })
 
+-- TODO: doesn't seem to work
 -- plugins
 lvim.plugins = {
     { "farmergreg/vim-lastplace" },
