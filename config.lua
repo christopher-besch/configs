@@ -55,7 +55,7 @@ vim.opt.sidescrolloff = 8
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "desert"
+lvim.colorscheme = "onedarker"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -119,6 +119,8 @@ lvim.builtin.which_key.vmappings["r"] = {
     f = { ":'<, '>sort! n<CR>", ":sort! n" },
     u = { ":'<, '>sort u<CR>", ":sort u" },
 }
+-- colourscheme
+lvim.builtin.which_key.mappings["s"]["s"] = { ":colorscheme zellner<CR>", "Light Mode" }
 
 -- TODO: User Config for predefined plugins
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
