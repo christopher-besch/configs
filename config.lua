@@ -53,7 +53,7 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 
 -- general
-lvim.log.level = "warn"
+lvim.log.level = "error"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 -- to disable icons and use a minimalist setup, uncomment the following
