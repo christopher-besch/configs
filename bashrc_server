@@ -7,6 +7,9 @@ export GPG_TTY=$(tty)
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
+HISTSIZE=10000
+HISTFILESIZE=$HISTSIZE
+
 alias please=sudo
 alias ..='cd ..'
 alias ...='cd ../..'
