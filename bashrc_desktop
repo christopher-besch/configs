@@ -65,6 +65,13 @@ function pdfcomp() {
     return $?
 }
 
+function toen() {
+    argos-translate --from-lang de --to-lang en "$*"
+}
+function tode() {
+    argos-translate --from-lang en --to-lang de "$*"
+}
+
 # function topdf() {
 #     for file in "$@"; do
 #         echo "converting $file"
