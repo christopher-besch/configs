@@ -105,9 +105,10 @@ EOF
 
     echo
     echo "installing wacom scripts"
-    ln -fvs $DIR/wacom/wacom_normal "$HOME/.local/bin/wacom_normal"
-    ln -fvs $DIR/wacom/wacom_xournal "$HOME/.local/bin/wacom_xournal"
-    ln -fvs $DIR/wacom/wacom_xournal_wrapper "$HOME/.local/bin/wacom_xournal_wrapper"
+    sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
+    sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
+    sudo ln -fvs $DIR/wacom/wacom_xournal_wrapper "/usr/local/bin/wacom_xournal_wrapper"
+    ln -fvs $DIR/wacom/wacom_xournal_wrapper.desktop "$HOME/.local/share/applications/wacom_xournal_wrapper.desktop"
 
     echo
     echo "installing custom keyboard layout; please enter sudo password"
