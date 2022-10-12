@@ -104,6 +104,12 @@ EOF
     ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
 
     echo
+    echo "installing wacom scripts"
+    ln -fvs $DIR/wacom/wacom_normal "$HOME/.local/bin/wacom_normal"
+    ln -fvs $DIR/wacom/wacom_xournal "$HOME/.local/bin/wacom_xournal"
+    ln -fvs $DIR/wacom/wacom_xournal_wrapper "$HOME/.local/bin/wacom_xournal_wrapper"
+
+    echo
     echo "installing custom keyboard layout; please enter sudo password"
     sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
     setxkbmap chris_keyboard

@@ -7,9 +7,8 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 # setup wacom Wacom Intuos S for playing Stardew Valley #
 #########################################################
 
-# xsetwacom --list devices
-STYLUS=18
-PAD=19
+STYLUS=$(xsetwacom --list devices | grep "Wacom Intuos S Pen stylus" | grep -oP "\\d+")
+PAD=$(xsetwacom --list devices | grep "Wacom Intuos S Pad pad" | grep -oP "\\d+")
 
 # set draw area for 1920:1080 screen
 xsetwacom --set $STYLUS Area 0 0 15200 8550
@@ -27,4 +26,3 @@ xsetwacom --set $PAD Button 1 "key 1"
 xsetwacom --set $PAD Button 2 "key 2"
 # 3 -> 3
 xsetwacom --set $PAD Button 3 "key 3"
-

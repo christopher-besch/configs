@@ -1,0 +1,13 @@
+#!/bin/bash
+set -euo pipefail
+IFS=$' \n\t'
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
+####################################################
+# run Xournal++ with correct setups, then set back #
+####################################################
+
+bash $DIR/wacom_xournal.sh
+xournalpp
+bash $DIR/normal.sh
+

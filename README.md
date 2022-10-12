@@ -20,4 +20,5 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [inputrc for Humans](https://www.topbug.net/blog/2017/07/31/inputrc-for-humans)
 - [.inputrc for vi](https://gist.github.com/markscottwright/bf81539661b84649ea7924790729d596)
 - [Setup GitHub Verified Commits](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
+- [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 
