@@ -6,16 +6,18 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 # determine installing type
 if [[ -z ${1+x} ]]; then
     echo "installation type required"
-    echo "use 'server' or 'desktop'"
+    echo "use 'server', 'desktop' or 'ibm'"
     exit 1
 else
     if [[ $1 == "server" ]]; then
         INSTALL_TYPE="server"
     elif [[ $1 == "desktop" ]]; then
         INSTALL_TYPE="desktop"
+    elif [[ $1 == "ibm" ]]; then
+        INSTALL_TYPE="ibm"
     else
         echo "invalid installation type: $1"
-        echo "use 'server' or 'desktop'"
+        echo "use 'server', 'desktop' or 'ibm'"
         exit 1
     fi
 fi
@@ -23,9 +25,8 @@ echo "### installing chris' config for type: $INSTALL_TYPE ###"
 
 
 ###########################
-# both desktop and server #
+# desktop, server and ibm #
 ###########################
-
 echo
 echo "installing GDB config"
 ln -fvs $DIR/.gdbinit ~/.gdbinit
@@ -40,10 +41,9 @@ echo "installing bashrc"
 grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bashrc_$INSTALL_TYPE" >> ~/.bashrc
 
 ########################
-# only desktop version #
+# only desktop and ibm #
 ########################
-
-if [[ $INSTALL_TYPE == "desktop" ]]; then
+if [[ $INSTALL_TYPE == "desktop" || $INSTALL_TYPE == "ibm" ]]; then
     echo
     echo "installing clang-format config"
     ln -fvs $DIR/.clang-format ~/.clang-format
@@ -52,11 +52,6 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     echo "installing Git config"
     # only append include when not already done
     grep -E ' *path = .+/\gitconfig$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig\n" >> ~/.gitconfig
-
-    echo
-    echo "installing gpg config"
-    mkdir -p ~/.gnupg
-    ln -fvs $DIR/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 
     echo
     echo "installing Xfce config"
@@ -104,17 +99,28 @@ EOF
     ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
 
     echo
+    echo "installing custom keyboard layout"
+    sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
+    setxkbmap chris_keyboard
+fi
+
+################
+# only desktop #
+################
+if [[ $INSTALL_TYPE == "desktop" ]]; then
+    echo
+    echo "installing gpg config"
+    mkdir -p ~/.gnupg
+    ln -fvs $DIR/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+
+    echo
     echo "installing wacom scripts"
     sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
     sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
     sudo ln -fvs $DIR/wacom/wacom_xournal_wrapper "/usr/local/bin/wacom_xournal_wrapper"
     ln -fvs $DIR/wacom/wacom_xournal_wrapper.desktop "$HOME/.local/share/applications/wacom_xournal_wrapper.desktop"
-
-    echo
-    echo "installing custom keyboard layout; please enter sudo password"
-    sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
-    setxkbmap chris_keyboard
 fi
+
 
 echo
 echo "All done! Have a nice day."
