@@ -20,9 +20,12 @@ xsetwacom --set $STYLUS Button 2 1
 # upper stylus button -> right click
 xsetwacom --set $STYLUS Button 3 3
 
-# 1 -> 1
+# 1st -> 1
 xsetwacom --set $PAD Button 1 "key 1"
-# 2 -> 2
+# 2nd -> 2
 xsetwacom --set $PAD Button 2 "key 2"
-# 3 -> 3
+# 3rd -> 3
 xsetwacom --set $PAD Button 3 "key 3"
+# 4th -> 4
+xsetwacom --set $PAD Button 8 "key 4"
+

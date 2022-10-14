@@ -20,10 +20,12 @@ xsetwacom --set $STYLUS Button 2 1
 # upper stylus button -> middle click -> pan (you might have to tell Xournal++ that the stylus is a "mouse", not a "pen")
 xsetwacom --set $STYLUS Button 3 2
 
-# 1 -> use pen
+# 1st -> use pen
 xsetwacom --set $PAD Button 1 "key shift ctrl p"
-# 2 -> use eraser
+# 2nd -> use eraser
 xsetwacom --set $PAD Button 2 "key shift ctrl e"
-# 3 -> select region
+# 3rd -> select region
 xsetwacom --set $PAD Button 3 "key shift ctrl g"
+# 4th -> add new page
+xsetwacom --set $PAD Button 8 "key ctrl d"
 
