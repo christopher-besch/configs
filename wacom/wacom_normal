@@ -3,9 +3,9 @@ set -euo pipefail
 IFS=$' \n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
-#########################################################
-# setup wacom Wacom Intuos S for playing Stardew Valley #
-#########################################################
+######################################################
+# setup wacom Wacom Intuos S for operating a desktop #
+######################################################
 
 STYLUS=$(xsetwacom --list devices | grep "Wacom Intuos S Pen stylus" | grep -oP "\\d+")
 PAD=$(xsetwacom --list devices | grep "Wacom Intuos S Pad pad" | grep -oP "\\d+")
@@ -13,19 +13,19 @@ PAD=$(xsetwacom --list devices | grep "Wacom Intuos S Pad pad" | grep -oP "\\d+"
 # set draw area for 1920:1080 screen
 xsetwacom --set $STYLUS Area 0 0 15200 8550
 
-# press -> nothing
-xsetwacom --set $STYLUS Button 1 0
-# lower stylus button -> left click
-xsetwacom --set $STYLUS Button 2 1
-# upper stylus button -> right click
-xsetwacom --set $STYLUS Button 3 3
+# press -> left click
+xsetwacom --set $STYLUS Button 1 1
+# lower stylus button -> right click
+xsetwacom --set $STYLUS Button 2 3
+# upper stylus button -> scroll
+xsetwacom --set $STYLUS Button 3 "pan"
 
-# 1st -> 1
-xsetwacom --set $PAD Button 1 "key 1"
-# 2nd -> 2
-xsetwacom --set $PAD Button 2 "key 2"
-# 3rd -> 3
-xsetwacom --set $PAD Button 3 "key 3"
-# 4th -> 4
-xsetwacom --set $PAD Button 8 "key 4"
+# 1st -> enter
+xsetwacom --set $PAD Button 1 "key return"
+# 2nd -> escape
+xsetwacom --set $PAD Button 2 "key esc"
+# 3rd -> shift
+xsetwacom --set $PAD Button 3 "key shift"
+# 4th -> delete
+xsetwacom --set $PAD Button 8 "key del"
 
