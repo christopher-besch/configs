@@ -15,8 +15,8 @@ xsetwacom --set $STYLUS Area 0 0 15200 8550
 
 # press -> left click
 xsetwacom --set $STYLUS Button 1 1
-# lower stylus button -> left click
-xsetwacom --set $STYLUS Button 2 1
+# lower stylus button -> undo
+xsetwacom --set $STYLUS Button 2 "key ctrl z"
 # upper stylus button -> middle click -> pan (you might have to tell Xournal++ that the stylus is a "mouse", not a "pen")
 xsetwacom --set $STYLUS Button 3 2
 
