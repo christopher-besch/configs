@@ -40,6 +40,11 @@ echo "installing bashrc"
 # only append sourcing when not already done
 grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bashrc_$INSTALL_TYPE" >> ~/.bashrc
 
+echo
+echo "installing LunarVim config"
+mkdir -vp ~/.config/lvim
+ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
+
 ########################
 # only desktop and ibm #
 ########################
@@ -85,11 +90,6 @@ EOF
     mkdir -vp ~/.config/kitty
     git clone https://github.com/dexpota/kitty-themes ~/.config/kitty
     ln -fvs $DIR/kitty.conf ~/.config/kitty/kitty.conf
-
-    echo
-    echo "installing LunarVim config"
-    mkdir -vp ~/.config/lvim
-    ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
 
     echo
     echo "installing LunarVim German Spelling"
