@@ -52,9 +52,24 @@ vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 
+lvim.format_on_save = false
+-- force spaces after formatting
+lvim.autocommands = {
+    {
+        -- see `:h autocmd-events`
+        "BufWrite",
+        {
+            pattern = { "*" },
+            callback = function()
+                require("lvim.lsp.utils").format({})
+                vim.cmd("retab")
+            end
+        },
+    },
+}
+
 -- general
 lvim.log.level = "error"
-lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -126,7 +141,7 @@ lvim.builtin.which_key.mappings["s"]["s"] = { ":colorscheme zellner<CR>", "Light
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
+lvim.builtin.notify.active = false
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
