@@ -18,6 +18,7 @@ alias py=python3
 alias icat='kitty +kitten icat'
 alias vi='lvim'
 alias chmod='chmod --preserve-root'
+alias tree='tree -C'
 
 alias ls='exa --icons --group-directories-first'
 alias l='echo "Prepare for unforeseen consequencesλ"'
