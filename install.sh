@@ -54,11 +54,6 @@ if [[ $INSTALL_TYPE == "desktop" || $INSTALL_TYPE == "ibm" ]]; then
     ln -fvs $DIR/.clang-format ~/.clang-format
 
     echo
-    echo "installing Git config"
-    # only append include when not already done
-    grep -E ' *path = .+/\gitconfig$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig\n" >> ~/.gitconfig
-
-    echo
     echo "installing Xfce config"
     mkdir -p ~/.config
     ln -fvs $DIR/user-dirs.dirs ~/.config/user-dirs.dirs
@@ -104,6 +99,16 @@ EOF
     setxkbmap chris_keyboard
 fi
 
+############
+# only ibm #
+############
+if [[ $INSTALL_TYPE == "ibm" ]]; then
+    echo
+    echo "installing IBM Git config"
+    # only append include when not already done
+    grep -E ' *path = .+/\gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
+fi
+
 ################
 # only desktop #
 ################
@@ -119,6 +124,11 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
     sudo ln -fvs $DIR/wacom/wacom_xournal_wrapper "/usr/local/bin/wacom_xournal_wrapper"
     ln -fvs $DIR/wacom/wacom_xournal_wrapper.desktop "$HOME/.local/share/applications/wacom_xournal_wrapper.desktop"
+
+    echo
+    echo "installing Desktop Git config"
+    # only append include when not already done
+    grep -E ' *path = .+/\gitconfig_desktop$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_desktop\n" >> ~/.gitconfig
 fi
 
 
