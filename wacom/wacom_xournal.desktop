@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Wacom Xournal++ Wrapper
 Terminal=false
-Exec=wacom_xournal_wrapper
+Exec=wacom_xournal
 Type=Application
 

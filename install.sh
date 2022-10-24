@@ -122,8 +122,7 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     echo "installing wacom scripts"
     sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
     sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
-    sudo ln -fvs $DIR/wacom/wacom_xournal_wrapper "/usr/local/bin/wacom_xournal_wrapper"
-    ln -fvs $DIR/wacom/wacom_xournal_wrapper.desktop "$HOME/.local/share/applications/wacom_xournal_wrapper.desktop"
+    ln -fvs $DIR/wacom/wacom_xournal.desktop "$HOME/.local/share/applications/wacom_xournal.desktop"
 
     echo
     echo "installing Desktop Git config"
