@@ -24,8 +24,8 @@ xsetwacom --set $STYLUS Button 3 2
 xsetwacom --set $PAD Button 1 "key shift ctrl p"
 # 2nd -> use eraser
 xsetwacom --set $PAD Button 2 "key shift ctrl e"
-# 3rd -> select rectangle
-xsetwacom --set $PAD Button 3 "key shift ctrl r"
-# 4th -> add new page
-xsetwacom --set $PAD Button 8 "key ctrl d"
+# 3rd -> highlighter
+xsetwacom --set $PAD Button 3 "key shift ctrl h"
+# 4th -> select rectangle
+xsetwacom --set $PAD Button 8 "key shift ctrl r"
 
