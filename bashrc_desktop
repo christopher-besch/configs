@@ -72,10 +72,12 @@ alias fox='firefox'
 
 # move through folders with j and k
 function j() {
+    # add current dir to stack
     if [ "$#" -ne 1 ]; then
-        echo "target folder must be given"
-        return 1
+        pushd . > /dev/null
+        return $?
     fi
+
     pushd "$1" > /dev/null
     return $?
 }
