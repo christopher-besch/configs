@@ -52,6 +52,12 @@ vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 
+vim.filetype.add({
+    extension = {
+        mima = "asm"
+    }
+})
+
 lvim.format_on_save = false
 -- force spaces after formatting
 lvim.autocommands = {
