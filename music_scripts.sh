@@ -19,6 +19,11 @@
 # docker run --rm -ti -v /home/chris/music:/music:ro -v /home/chris/backup/music_repo:/music_repo chrisbesch/borg2
 # borg -r /music/ rcreate --encryption=none
 # TZ=Europe/Berlin borg -r /music_repo/ create --info "{now}_existing_archive" /music/
+#
+# docker run --rm -ti -v /home/chris/.ssh/chris_contabo01_music_borg:/ssh_priv_key:ro -v /home/chris/music:/music:ro -v /home/chris/backup/music_repo:/music_repo --entrypoint=bash chrisbesch/docker_borg_client
+# borg -r "ssh://root@nextcloud.chris-besch.com/var/lib/borg_server/repos/music" check --rsh "ssh -i /ssh_priv_key -p 2845"
+# borg -r "ssh://root@nextcloud.chris-besch.com/var/lib/borg_server/repos/music" transfer --other-repo /music_repo --dry-run --rsh "ssh -i /ssh_priv_key -p 2845"
+# borg -r "ssh://root@nextcloud.chris-besch.com/var/lib/borg_server/repos/music" transfer --other-repo /music_repo --rsh "ssh -i /ssh_priv_key -p 2845"
 
 # doesn't work with " in name
 function get_raw() {
