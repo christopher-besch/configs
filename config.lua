@@ -52,6 +52,9 @@ vim.opt.spelllang = "en"
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 
+-- ignore nextcloud mount
+vim.opt.shada:append({ "r/home/chris/nextcloud" })
+
 vim.filetype.add({
     extension = {
         mima = "asm"

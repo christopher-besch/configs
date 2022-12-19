@@ -7,6 +7,11 @@
 # - track
 # - title
 
+# commands
+# docker run --rm -ti -v /home/chris/music:/music:ro -v /home/chris/backup/music_repo:/music_repo chrisbesch/borg2
+# borg -r /music/ rcreate --encryption=none
+# TZ=Europe/Berlin borg -r /music_repo/ create --info "{now}_existing_archive" /music/
+
 # doesn't work with " in name
 function get_raw() {
     find "$2" -type f -name '*.mp3' -printf 'exiftool -json "%p"' -printf " | jq .[0].$1\n" | sh
