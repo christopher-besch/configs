@@ -6,8 +6,16 @@
 # - album
 # - track
 # - title
+#
+# singles:
+# album: artist
+# track: none
+# name: only title
 
-# commands
+# upgrade commands
+# id3convert
+
+# borg commands
 # docker run --rm -ti -v /home/chris/music:/music:ro -v /home/chris/backup/music_repo:/music_repo chrisbesch/borg2
 # borg -r /music/ rcreate --encryption=none
 # TZ=Europe/Berlin borg -r /music_repo/ create --info "{now}_existing_archive" /music/
@@ -67,7 +75,7 @@ function jpg_to_png() {
 # apply correct track number
 function retrack() {
     CNT=0
-    for FILE in $1/*.mp3; do
+    for FILE in "$1/*.mp3"; do
         CNT=$(($CNT+1))
         echo $CNT $FILE
         eyeD3 --track $CNT "$FILE"
@@ -82,6 +90,11 @@ function name_correct() {
         -printf 'mv "%p" "%h/$(tee).mp3" && ' \
         -printf 'echo "%p" \n' | \
             sh
+}
+
+function clean_music() {
+    eyeD3 -r --album-artist "$1" && \
+    eyeD3 -r --track-total 0 "$1"
 }
 
 # find . -name "- *.mp3" -printf 'echo "%f" | python3 -c "print(input()[2:])" | echo "./%f" "./$(tee)"\n' | sh
