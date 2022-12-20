@@ -45,7 +45,7 @@ function test_title() {
 function test_track() {
     echo '## track ##' && get Track "$1"
 }
-function test() {
+function test_marwin() {
     test_artist "$1" && test_album "$1" && test_title "$1" && test_track "$1"
 }
 
