@@ -98,6 +98,7 @@ function name_correct() {
 }
 
 function clean_music() {
+    find "$1" -type f -name '*.mp3' -exec id3convert '{}' \;
     eyeD3 -r --album-artist "$1" && \
     eyeD3 -r --track-total 0 "$1"
 }
