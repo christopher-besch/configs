@@ -80,7 +80,7 @@ function jpg_to_png() {
 # apply correct track number
 function retrack() {
     CNT=0
-    for FILE in "$1/*.mp3"; do
+    for FILE in $1/*.mp3; do
         CNT=$(($CNT+1))
         echo $CNT $FILE
         eyeD3 --track $CNT "$FILE"
@@ -99,8 +99,9 @@ function name_correct() {
 
 function clean_music() {
     find "$1" -type f -name '*.mp3' -exec id3convert '{}' \;
-    eyeD3 -r --album-artist "$1" && \
+    eyeD3 -r --album-artist '' "$1"
     eyeD3 -r --track-total 0 "$1"
+    eyeD3 -r --composer '' "$1"
 }
 
 # find . -name "- *.mp3" -printf 'echo "%f" | python3 -c "print(input()[2:])" | echo "./%f" "./$(tee)"\n' | sh
