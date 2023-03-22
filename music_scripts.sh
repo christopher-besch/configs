@@ -25,6 +25,9 @@
 # borg -r "ssh://root@nextcloud.chris-besch.com/var/lib/borg_server/repos/music" transfer --other-repo /music_repo --dry-run --rsh "ssh -i /ssh_priv_key -p 2845"
 # borg -r "ssh://root@nextcloud.chris-besch.com/var/lib/borg_server/repos/music" transfer --other-repo /music_repo --rsh "ssh -i /ssh_priv_key -p 2845"
 
+# rip cd
+# abcde -d /dev/sr0 -o 'mp3: -b 320'
+
 # doesn't work with " in name
 function get_raw() {
     find "$2" -type f -name '*.mp3' -printf 'exiftool -json "%p"' -printf " | jq .[0].$1\n" | sh
@@ -87,6 +90,13 @@ function retrack() {
     done
 }
 
+function retitle() {
+    for FILE in *.mp3; do
+        echo $FILE
+        eyeD3 --title "$FILE" "$FILE"
+    done
+}
+
 # apply correct file name
 function name_correct() {
     find . -name '*.mp3' \
@@ -105,4 +115,36 @@ function clean_music() {
 }
 
 # find . -name "- *.mp3" -printf 'echo "%f" | python3 -c "print(input()[2:])" | echo "./%f" "./$(tee)"\n' | sh
+
+# do first:
+# mmv '*_*' '#1 #2'
+function lofi_album() {
+    for DIR in *; do
+        pushd "$DIR" > /dev/null
+        for MP3 in *.mp3; do
+            eyeD3 --album "$DIR" "$MP3"
+        done
+        popd > /dev/null
+    done
+}
+
+function lofi_remove_spaces() {
+    for DIR in *; do
+        pushd "$DIR" > /dev/null
+        while mmv '*_*' '#1 #2'; do
+            true
+        done
+        popd > /dev/null
+    done
+}
+
+function lofi_title() {
+    for DIR in *; do
+        pushd "$DIR" > /dev/null
+        for MP3 in *.mp3; do
+            eyeD3 --title "${MP3%'.mp3'}" "$MP3"
+        done
+        popd > /dev/null
+    done
+}
 
