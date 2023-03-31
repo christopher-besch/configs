@@ -95,6 +95,7 @@ EOF
 
     echo
     echo "installing custom keyboard layout"
+    # you might need to adjust /etc/default/keyboard
     sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
     setxkbmap chris_keyboard
 fi
@@ -113,11 +114,6 @@ fi
 # only desktop #
 ################
 if [[ $INSTALL_TYPE == "desktop" ]]; then
-    echo
-    echo "installing gpg config"
-    mkdir -p ~/.gnupg
-    ln -fvs $DIR/gpg-agent.conf ~/.gnupg/gpg-agent.conf
-
     echo
     echo "installing wacom scripts"
     sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
