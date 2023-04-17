@@ -106,7 +106,7 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = false
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-lvim.builtin.nvimtree.setup.update_focused_file.update_root = false
+lvim.builtin.nvimtree.setup.update_focused_file.enable = false
 
 -- don't select anything before hitting <Tab> for the first time (mostly for golang)
 local cmp = require "cmp"
