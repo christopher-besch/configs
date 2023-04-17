@@ -42,8 +42,10 @@ grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bas
 
 echo
 echo "installing LunarVim config"
-mkdir -vp ~/.config/lvim
+mkdir -vp ~/.config/lvim ~/.config/lvim/lsp-settings
 ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
+ln -fvs $DIR/eclipse_formatter.xml ~/.config/lvim/eclipse_formatter.xml
+ln -fvs $DIR/jdtls.json ~/.config/lvim/lsp-settings/jdtls.json
 
 ########################
 # only desktop and ibm #
