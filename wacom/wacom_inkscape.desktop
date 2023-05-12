@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Wacom Settings for Inkscape
+Terminal=false
+Exec=wacom_inkscape
+Type=Application
+
