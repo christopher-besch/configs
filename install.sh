@@ -73,10 +73,10 @@ EOF
     echo
     echo "installing font"
     curl -o font.zip -L https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
-    rm -r $HOME/.local/share/fonts || true
-    mkdir -vp $HOME/.local/share/fonts
-    mv -v font.zip $HOME/.local/share/fonts
-    cd $HOME/.local/share/fonts
+    rm -r "$HOME/.local/share/fonts/JetBrains Mono" || true
+    mkdir -vp "$HOME/.local/share/fonts/JetBrains Mono"
+    mv -v font.zip "$HOME/.local/share/fonts/JetBrains Mono"
+    cd "$HOME/.local/share/fonts/JetBrains Mono"
     unzip font.zip
     rm -v font.zip
     fc-cache -f -v
@@ -127,7 +127,7 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     echo
     echo "installing Desktop Git config"
     # only append include when not already done
-    grep -E ' *path = .+/\gitconfig_desktop$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_desktop\n" >> ~/.gitconfig
+    grep -E ' *path = .+/gitconfig_desktop$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_desktop\n" >> ~/.gitconfig
 fi
 
 
