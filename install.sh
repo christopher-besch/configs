@@ -42,7 +42,7 @@ grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bas
 
 echo
 echo "installing LunarVim config"
-mkdir -vp ~/.config/lvim ~/.config/lvim/lsp-settings
+mkdir -vp ~/.config/lvim ~/.config/lvim/{lsp-settings,spell}
 ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
 ln -fvs $DIR/eclipse_formatter.xml ~/.config/lvim/eclipse_formatter.xml
 ln -fvs $DIR/jdtls.json ~/.config/lvim/lsp-settings/jdtls.json
@@ -87,13 +87,6 @@ EOF
     mkdir -vp ~/.config/kitty
     git clone https://github.com/dexpota/kitty-themes ~/.config/kitty
     ln -fvs $DIR/kitty.conf ~/.config/kitty/kitty.conf
-
-    echo
-    echo "installing LunarVim German Spelling"
-    # fixes a bug: https://github.com/LunarVim/LunarVim/issues/1445
-    mkdir -p ~/.local/share/lunarvim/site/spell
-    ln -fvs $DIR/vendor/de.utf-8.spl ~/.local/share/lunarvim/site/spell/de.utf-8.spl
-    ln -fvs $DIR/vendor/de.utf-8.sug ~/.local/share/lunarvim/site/spell/de.utf-8.sug
 
     echo
     echo "installing custom keyboard layout"
