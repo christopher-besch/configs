@@ -5,6 +5,7 @@ export EDITOR='lvim'
 export GPG_TTY=$(tty)
 
 export PATH="$HOME/.yarn/bin:$PATH"
+export MANPAGER='lvim +Man!'
 
 HISTSIZE=10000
 HISTFILESIZE=$HISTSIZE
