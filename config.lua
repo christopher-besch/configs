@@ -93,7 +93,7 @@ lvim.builtin.which_key.vmappings["r"] = {
 lvim.builtin.which_key.vmappings["b"] = {
     name = "b64",
     d = { ":'<,'>!base64 -d<CR>", "Decode b64" },
-    e = { ":'<,'>!base64 -e<CR>", "Encode b64" },
+    e = { ":'<,'>!base64<CR>", "Encode b64" },
 }
 
 -- hexdump
