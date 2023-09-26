@@ -1,7 +1,8 @@
 # Chris' Configs
 The `install.sh` script symlinks the dotfiles in this directory to wherever they belong.
-There's a server and a desktop version.
+There's a server, a desktop and an IBM version.
 The server version is basically a subset of all desktop configs that also work on an SSH server.
+The IBM version is a subset of the desktop version.
 
 # How to Cook Like I Do?
 1. Fork this repo,
