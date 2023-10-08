@@ -1,0 +1,11 @@
+Host github.com
+    IdentityFile ~/.ssh/chris
+
+Host nextcloud.chris-besch.com
+    IdentityFile ~/.ssh/chris
+
+Host rasp01.fritz.box
+    IdentityFile ~/.ssh/chris
+
+Host i08fs1.informatik.kit.edu
+    IdentityFile ~/.ssh/chris

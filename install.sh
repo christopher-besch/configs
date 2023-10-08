@@ -121,6 +121,11 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     echo "installing Desktop Git config"
     # only append include when not already done
     grep -E ' *path = .+/gitconfig_desktop$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_desktop\n" >> ~/.gitconfig
+
+    echo
+    echo "installing ssh config"
+    mkdir -vp ~/.ssh
+    ln -fvs $DIR/ssh_config ~/.ssh/config
 fi
 
 
