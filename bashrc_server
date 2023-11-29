@@ -60,6 +60,7 @@ alias ...............................................='cd ../../../../../../../.
 alias ................................................='cd ../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../../..'
 alias py=python3
 alias chmod='chmod --preserve-root'
+alias avr-objdump='avr-objdump --disassembler-color=extended'
 
 alias l='echo "Prepare for unforeseen consequencesλ"'
 alias ll='ls -alF'
