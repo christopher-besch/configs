@@ -53,3 +53,16 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - plugged in: never, never, never, never
 - default terminal: kitty
 
+# GDB commands
+- `tui enable`
+- `target record-full`
+- `record`
+- `reverse-step`
+- `reverse-next`
+
+# Blender hotkeys
+- join objects: ctrl+j in object mode
+- separate meshes: p in edit mode
+- hide everything except for selected: shift+h
+- show hidden objects: alt+h
+
