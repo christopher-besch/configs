@@ -65,4 +65,10 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - separate meshes: p in edit mode
 - hide everything except for selected: shift+h
 - show hidden objects: alt+h
+- duplicate selected: shift+d
+- select all linked : ctrl+l
+- modifier for move (g), scale (s):
+    - in one direction: x, y, z
+    - in both other directions: shift+x, shift+y, shift+z
+- all to same hight: s z 0
 
