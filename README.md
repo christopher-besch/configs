@@ -59,6 +59,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - `record`
 - `reverse-step`
 - `reverse-next`
+- clear screen: ctrl+l
 
 # Blender hotkeys
 - join objects: ctrl+j in object mode
