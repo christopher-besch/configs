@@ -89,10 +89,10 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 13. copy files into `/home/chris/files/music/data`
 14. `docker run --rm -ti -v /home/chris/files/music/data:/music/data:ro -v /home/chris/files/music/repo:/music/repo chrisbesch/borg2`
 15. `borg -r /music/repo check`
-16. `borg -r /music/repo create '{now}_added_home_einaudi_epic_mountain_project_borealis_air_detect' /music/data/`
+16. `borg -r /music/repo create '{now}_fixed_cover_arts_artists' /music/data/`
 17. enable external access to Hetzner storage box
 18. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
-19. `rsync --dry-run -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
+19. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
 20. disable external access to Hetzner storage box
 21. `docker exec -ti --user www-data NCFrontend_chris_nextcloud /var/www/html/occ files:scan --all` on Hetzner server
 22. rescan Music library

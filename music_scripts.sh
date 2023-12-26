@@ -112,6 +112,7 @@ function clean_music() {
     eyeD3 -r --album-artist '' "$1"
     eyeD3 -r --track-total 0 "$1"
     eyeD3 -r --composer '' "$1"
+    eyeD3 -r --remove-all-images "$1"
 }
 
 # find . -name "- *.mp3" -printf 'echo "%f" | python3 -c "print(input()[2:])" | echo "./%f" "./$(tee)"\n' | sh
