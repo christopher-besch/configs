@@ -112,3 +112,9 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 # Other Useful Stuff
 - `exiftool '-EXIF:DateTimeOriginal=2023-08-13-12-00' 001_{028..036}.jpg`
 
+# Solve Issues with Pacman Keys on EndeavourOS
+2. `sudo rm -r /etc/pacman.d/gnupg`
+3. `sudo pacman-key --init`
+4. `sudo pacman-key --populate archlinux endeavouros`
+5. `sudo pacman -Syy archlinux-keyring endeavouros-keyring`
+
