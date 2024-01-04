@@ -109,6 +109,12 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 8. disable external access to Hetzner storage box
 9. rescan Photoprism library
 
+# Screenshots Prodecure
+1. `mogrify -format jpg *.png`
+2. `rm *.png`
+3. `exiftool '-EXIF:DateTimeOriginal<Filename' *`
+4. `rm *.jpg_original`
+
 # Other Useful Stuff
 - `exiftool '-EXIF:DateTimeOriginal=2023-08-13-12-00' 001_{028..036}.jpg`
 
