@@ -23,7 +23,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [Setup GitHub Verified Commits](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 
-# Install instructions
+# Install Instructions
 - [stuff missing]
 - set display resolution/refresh rate (possibly multiple for different monitor setups)
 - set background image
@@ -53,7 +53,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - plugged in: never, never, never, never
 - default terminal: kitty
 
-# GDB commands
+# GDB Commands
 - `tui enable`
 - `target record-full`
 - `record`
@@ -61,7 +61,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - `reverse-next`
 - clear screen: ctrl+l
 
-# Blender hotkeys
+# Blender Hotkeys
 - join objects: ctrl+j in object mode
 - separate meshes: p in edit mode
 - hide everything except for selected: shift+h
@@ -124,3 +124,5 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 4. `sudo pacman-key --populate archlinux endeavouros`
 5. `sudo pacman -Syy archlinux-keyring endeavouros-keyring`
 
+# KiCad Hotkeys
+- repour: B
