@@ -23,7 +23,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [Setup GitHub Verified Commits](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 
-# Install instructions
+# Install Instructions
 - [stuff missing]
 - set display resolution/refresh rate (possibly multiple for different monitor setups)
 - set background image
@@ -53,3 +53,76 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - plugged in: never, never, never, never
 - default terminal: kitty
 
+# GDB Commands
+- `tui enable`
+- `target record-full`
+- `record`
+- `reverse-step`
+- `reverse-next`
+- clear screen: ctrl+l
+
+# Blender Hotkeys
+- join objects: ctrl+j in object mode
+- separate meshes: p in edit mode
+- hide everything except for selected: shift+h
+- show hidden objects: alt+h
+- duplicate selected: shift+d
+- select all linked : ctrl+l
+- modifier for move (g), scale (s):
+    - in one direction: x, y, z
+    - in both other directions: shift+x, shift+y, shift+z
+- all to same hight: s z 0
+
+# Music Procedure
+1. download music zip
+2. extract into `[artist]/[album]`
+3. convert covers to `cover.png`
+4. `source ~/.custom_configs/music_scripts.sh`
+5. check artist, album, title and track with `test_marwin .`
+6. adjust with `eyeD3 --artist '[artist]' --album '[album]' *.mp3`
+7. prettify title song by song (maybe use vi to batch edit titles)
+8. `clean_music .`
+9. create backup
+10. `name_correct .`
+11. fix errors manually
+12. check all with `tree`
+13. copy files into `/home/chris/files/music/data`
+14. `docker run --rm -ti -v /home/chris/files/music/data:/music/data:ro -v /home/chris/files/music/repo:/music/repo chrisbesch/borg2`
+15. `borg -r /music/repo check`
+16. `borg -r /music/repo create '{now}_fixed_cover_arts_artists' /music/data/`
+17. enable external access to Hetzner storage box
+18. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
+19. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
+20. disable external access to Hetzner storage box
+21. `docker exec -ti --user www-data NCFrontend_chris_nextcloud /var/www/html/occ files:scan --all` on Hetzner server
+22. rescan Music library
+23. enjoy
+
+# Images Procedure
+1. copy images from the camera in the current directory (i.e. 104) to temp dir on pc
+2. use new directory on camera (i.e. 105)
+3. on pc delete bad images (keep as few as possible; imagine you were taking analogue photos—they didn't have many images for a single situation either)
+4. move images to correct dir (select photographer for each image)
+5. enable external access to Hetzner storage box
+6. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/images` in `/home/chris/files/images/images`
+7. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/images` in `/home/chris/files/images/images`
+8. disable external access to Hetzner storage box
+9. rescan Photoprism library
+
+# Screenshots Prodecure
+1. `mogrify -format jpg *.png`
+2. `rm *.png`
+3. `exiftool '-EXIF:DateTimeOriginal<Filename' *`
+4. `rm *.jpg_original`
+
+# Other Useful Stuff
+- `exiftool '-EXIF:DateTimeOriginal=2023-08-13-12-00' 001_{028..036}.jpg`
+
+# Solve Issues with Pacman Keys on EndeavourOS
+2. `sudo rm -r /etc/pacman.d/gnupg`
+3. `sudo pacman-key --init`
+4. `sudo pacman-key --populate archlinux endeavouros`
+5. `sudo pacman -Syy archlinux-keyring endeavouros-keyring`
+
+# KiCad Hotkeys
+- repour: B

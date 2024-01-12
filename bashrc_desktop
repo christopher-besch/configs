@@ -63,6 +63,8 @@ alias py=python3
 alias icat='kitty +kitten icat'
 alias vi='lvim'
 alias chmod='chmod --preserve-root'
+alias avr-objdump='avr-objdump --disassembler-color=extended'
+alias less='less -r'
 alias tree='tree -C'
 
 alias ls='exa --icons --group-directories-first'
