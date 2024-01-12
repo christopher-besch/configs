@@ -4,12 +4,6 @@ IFS=$' \n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 
-echo
-echo "installing Git config"
-# only append include when not already done
-grep -E ' *path = .+/\gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
-exit 0
-
 # determine installing type
 if [[ -z ${1+x} ]]; then
     echo "installation type required"
