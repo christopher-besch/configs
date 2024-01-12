@@ -3,10 +3,6 @@
 [user]
     email = christopher.besch@ibm.com
     name = cbesch
-[commit]
-    gpgSign = true
-[tag]
-    gpgSign = true
 [pull]
     rebase = false
 [init]

@@ -3,6 +3,13 @@ set -euo pipefail
 IFS=$' \n\t'
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
+
+echo
+echo "installing Git config"
+# only append include when not already done
+grep -E ' *path = .+/\gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
+exit 0
+
 # determine installing type
 if [[ -z ${1+x} ]]; then
     echo "installation type required"
@@ -93,16 +100,11 @@ EOF
     # you might need to adjust /etc/default/keyboard
     sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
     setxkbmap chris_keyboard
-fi
 
-############
-# only ibm #
-############
-if [[ $INSTALL_TYPE == "ibm" ]]; then
     echo
-    echo "installing IBM Git config"
+    echo "installing Git config"
     # only append include when not already done
-    grep -E ' *path = .+/\gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
+    grep -E ' *path = .+/\gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
 fi
 
 ################
@@ -116,11 +118,6 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
     sudo ln -fvs $DIR/wacom/wacom_inkscape "/usr/local/bin/wacom_inkscape"
     ln -fvs $DIR/wacom/wacom_xournal.desktop "$HOME/.local/share/applications/wacom_xournal.desktop"
     ln -fvs $DIR/wacom/wacom_inkscape.desktop "$HOME/.local/share/applications/wacom_inkscape.desktop"
-
-    echo
-    echo "installing Desktop Git config"
-    # only append include when not already done
-    grep -E ' *path = .+/gitconfig_desktop$' ~/.gitconfig > /dev/null || printf "[include]\n path = $DIR/gitconfig_desktop\n" >> ~/.gitconfig
 
     echo
     echo "installing ssh config"
