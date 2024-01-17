@@ -87,16 +87,13 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 11. fix errors manually
 12. check all with `tree`
 13. copy files into `/home/chris/files/music/data`
-14. `docker run --rm -ti -v /home/chris/files/music/data:/music/data:ro -v /home/chris/files/music/repo:/music/repo chrisbesch/borg2`
-15. `borg -r /music/repo check`
-16. `borg -r /music/repo create '{now}_fixed_cover_arts_artists' /music/data/`
-17. enable external access to Hetzner storage box
-18. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
-19. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music/data`
-20. disable external access to Hetzner storage box
-21. `docker exec -ti --user www-data NCFrontend_chris_nextcloud /var/www/html/occ files:scan --all` on Hetzner server
-22. rescan Music library
-23. enjoy
+14. enable external access to Hetzner storage box
+15. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music`
+16. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music`
+17. disable external access to Hetzner storage box
+18. `docker exec -ti --user www-data NCFrontend_chris_nextcloud /var/www/html/occ files:scan --all` on Hetzner server
+19. rescan Music library
+20. enjoy
 
 # Images Procedure
 1. copy images from the camera in the current directory (i.e. 104) to temp dir on pc
