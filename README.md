@@ -57,7 +57,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - `usermod -aG uucp chris`
 - copy files from backup drive
 - set display resolution/refresh rate (possibly multiple for different monitor setups)
-- set background image
+- set background image in `/usr/share/endeavouros/backgrounds`, configure in xfce config and in `/etc/lightdm/slick-greeter.conf`
 - panel:
     - Workspace Switcher
     - Window Buttons
