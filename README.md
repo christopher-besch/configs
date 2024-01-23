@@ -46,6 +46,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - install ssh priv and pub key from keepass db
 - enable keepassxc browser integration for firefox
 - enable keepassxc ssh agent integration
+- `git remote set-url origin git@github.com:christopher-besch/configs.git` in `~/.custom_configs`
 
 - install rustup (and rust and cargo)
 - install nvm (and node and npm)
