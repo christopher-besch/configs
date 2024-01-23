@@ -27,6 +27,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - sync repos
 - copy `/etc/NetworkManager/system-connections` into keepass db
 - put keepass db on usb
+- create firefox bookmarsk backup
 - download endeavouros and put on usb
 - copy files to backup drive
 - say goodbye to your system for the last time
@@ -40,7 +41,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy keepass files over
 - `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
 - install config
-- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom`
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp`
 - `yay mmv`
 
 - install ssh priv and pub key from keepass db
@@ -50,8 +51,8 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 
 - install rustup (and rust and cargo)
 - install nvm (and node and npm)
-- install lvim
-- install NetworkManager files
+- install lvim (no for python dependencies; check for new ones in script)
+- install NetworkManager files (set owner to root in `/etc/NetworkManager/system-connections`)
 - `usermod -aG docker chris`
 - `usermod -aG uucp chris`
 - copy files from backup drive
@@ -89,6 +90,9 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     - https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
     - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin
     - https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos
+- delete cookies when firefox is closed
+- don't clear history
+- enable https only mode
 - Firefox cookie / Decentraleyes exceptions:
     - github.com
     - keyhero.com
@@ -99,6 +103,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     - recipe.chris-besch.com
     - nextcloud.chris-besch.com
     - photo.chris-besch.com
+    - firefly.chris-besch.com
 - install bookmark backup
 - keyword.enabled: https://chris-besch.com/articles/installing_gentoo/#firefox
 
