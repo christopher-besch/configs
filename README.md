@@ -31,10 +31,17 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy files to backup drive
 - say goodbye to your system for the last time
 
-- [stuff missing]
+- install endeavour os with lan cable
+- partitions:
+    - 1024MiB  /efi fat32 boot
+    - 2RAM      swap  swap
+    - rest     /    ext4  root
+
 - copy keepass files over
+- `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
+- install config
 - `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom`
-- `yay aur/mmv`
+- `yay mmv`
 - install rustup (and rust and cargo)
 - install nvm (and node and npm)
 - install lvim
