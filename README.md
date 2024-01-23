@@ -24,7 +24,24 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 
 # Install Instructions
+- sync repos
+- copy `/etc/NetworkManager/system-connections` into keepass db
+- put keepass db on usb
+- download endeavouros and put on usb
+- copy files to backup drive
+- say goodbye to your system for the last time
+
 - [stuff missing]
+- copy keepass files over
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom`
+- `yay aur/mmv`
+- install rustup (and rust and cargo)
+- install nvm (and node and npm)
+- install lvim
+- install NetworkManager files
+- `usermod -aG docker chris`
+- `usermod -aG uucp chris`
+- copy files from backup drive
 - set display resolution/refresh rate (possibly multiple for different monitor setups)
 - set background image
 - panel:
@@ -40,7 +57,6 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     - Separator
     - DateTime
     - DateTime
-- install `xfce4-cpugraph-plugin`, `xfce4-netload-plugin`
 - disable screen saver
 - disable raise windows when any mouse button is pressed
 - key used to grab and move windows: None
@@ -52,6 +68,34 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - on battery: blank after 10min., put to sleep after 15min., switch off after never, on inactivity reduce to 20%, reduce after 60sec.
 - plugged in: never, never, never, never
 - default terminal: kitty
+
+- config Firefox
+- extensions:
+    - https://addons.mozilla.org/en-US/firefox/addon/decentraleyes
+    - https://addons.mozilla.org/en-US/firefox/addon/i-dont-care-about-cookies
+    - https://addons.mozilla.org/en-US/firefox/addon/keepassxc-browser/
+    - https://addons.mozilla.org/en-US/firefox/addon/ublock-origin
+    - https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos
+- Firefox cookie / Decentraleyes exceptions:
+    - github.com
+    - keyhero.com
+    - web.whatsapp.com
+    - web.telegram.com
+    - kuma.rasp01.fritz.box
+    - mc.chris-besch.com
+    - recipe.chris-besch.com
+    - nextcloud.chris-besch.com
+    - photo.chris-besch.com
+- install bookmark backup
+- keyword.enabled: https://chris-besch.com/articles/installing_gentoo/#firefox
+
+- add email accounts to thunderbird
+- add pgp keys
+- config mail@chris-besch.com for pgp
+
+- install minecraft
+
+- nextcloud autofs config
 
 # GDB Commands
 - `tui enable`
