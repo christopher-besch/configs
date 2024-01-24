@@ -24,7 +24,8 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 
 # Install Instructions
-- sync repos
+- push repos
+- save game screenshots
 - copy `/etc/NetworkManager/system-connections` into keepass db
 - put keepass db on usb
 - create firefox bookmarsk backup
@@ -113,7 +114,9 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 
 - install minecraft
 
-- nextcloud autofs config
+- TODO: nextcloud autofs config
+
+- set wacom pen and tablet to mouse+keyboard in xournalpp
 
 # GDB Commands
 - `tui enable`
