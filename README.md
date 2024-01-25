@@ -117,6 +117,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - TODO: nextcloud autofs config
 
 - set wacom pen and tablet to mouse+keyboard in xournalpp
+- disable pc speaker: https://wiki.archlinux.org/title/PC_speaker
 
 # GDB Commands
 - `tui enable`
