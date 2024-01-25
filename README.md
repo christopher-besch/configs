@@ -43,7 +43,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy keepass files over
 - `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
 - install config
-- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp`
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool`
 - `yay mmv`
 
 - install ssh priv and pub key from keepass db

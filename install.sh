@@ -85,8 +85,7 @@ if [[ $INSTALL_TYPE == "desktop" || $INSTALL_TYPE == "ibm" ]]; then
     echo "installing Xfce config"
     mkdir -p ~/.config
     ln -fvs $DIR/user-dirs.dirs ~/.config/user-dirs.dirs
-    # create dump and dwn dirs
-    mkdir -vp ~/.dump
+    # create dwn dirs
     mkdir -vp ~/dwn
 
     echo
