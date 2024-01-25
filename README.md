@@ -16,6 +16,7 @@ The same three-step plan applies to it, with an addition to the third:
 You have to run the `install.sh` script with root privileges (with `sudo`).
 
 # Resources
+- [Chris' Dotfiles (Looking for something aesthetic? Check his stuff out.)](https://github.com/TecCheck/dotfiles)
 - [clang-format-configurator](https://zed0.co.uk/clang-format-configurator)
 - [Pascal's Configs](https://github.com/pascal-kuschkowitz/bash)
 - [inputrc for Humans](https://www.topbug.net/blog/2017/07/31/inputrc-for-humans)

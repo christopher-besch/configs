@@ -48,6 +48,31 @@ ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
 ln -fvs $DIR/eclipse_formatter.xml ~/.config/lvim/eclipse_formatter.xml
 ln -fvs $DIR/jdtls.json ~/.config/lvim/lsp-settings/jdtls.json
 
+################
+# only desktop #
+################
+if [[ $INSTALL_TYPE == "desktop" ]]; then
+    echo
+    echo "installing ssh config"
+    mkdir -vp ~/.ssh
+    ln -fvs $DIR/ssh_config ~/.ssh/config
+
+    echo
+    echo "installing xournalpp config"
+    mkdir -vp ~/.config/xournalpp
+    ln -fvs $DIR/toolbar.ini "$HOME/.config/xournalpp/toolbar.ini"
+    ln -fvs $DIR/palette.gpl "$HOME/.config/xournalpp/palette.gpl"
+
+    echo
+    echo "installing wacom scripts"
+    ln -fvs $DIR/wacom/wacom_normal "$HOME/.local/bin/wacom_normal"
+    ln -fvs $DIR/wacom/wacom_xournal "$HOME/.local/bin/wacom_xournal"
+    ln -fvs $DIR/wacom/wacom_inkscape "$HOME/.local/bin/wacom_inkscape"
+    mkdir -p "$HOME/.local/share/applications"
+    ln -fvs $DIR/wacom/wacom_xournal.desktop "$HOME/.local/share/applications/wacom_xournal.desktop"
+    ln -fvs $DIR/wacom/wacom_inkscape.desktop "$HOME/.local/share/applications/wacom_inkscape.desktop"
+fi
+
 ########################
 # only desktop and ibm #
 ########################
@@ -90,36 +115,16 @@ EOF
     ln -fvs $DIR/kitty.conf ~/.config/kitty/kitty.conf
 
     echo
+    echo "installing Git config"
+    # only append include when not already done
+    grep -E ' *path = .+/gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "\n[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n    path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n    path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
+
+    echo
     echo "installing custom keyboard layout"
     # you might need to adjust /etc/default/keyboard
     sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
     setxkbmap chris_keyboard
-
-    echo
-    echo "installing Git config"
-    # only append include when not already done
-    grep -E ' *path = .+/gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "\n[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n    path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n    path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
 fi
-
-################
-# only desktop #
-################
-if [[ $INSTALL_TYPE == "desktop" ]]; then
-    echo
-    echo "installing wacom scripts"
-    sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
-    sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
-    sudo ln -fvs $DIR/wacom/wacom_inkscape "/usr/local/bin/wacom_inkscape"
-    mkdir -p "$HOME/.local/share/applications"
-    ln -fvs $DIR/wacom/wacom_xournal.desktop "$HOME/.local/share/applications/wacom_xournal.desktop"
-    ln -fvs $DIR/wacom/wacom_inkscape.desktop "$HOME/.local/share/applications/wacom_inkscape.desktop"
-
-    echo
-    echo "installing ssh config"
-    mkdir -vp ~/.ssh
-    ln -fvs $DIR/ssh_config ~/.ssh/config
-fi
-
 
 echo
 echo "All done! Have a nice day."
