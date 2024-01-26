@@ -23,6 +23,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [.inputrc for vi](https://gist.github.com/markscottwright/bf81539661b84649ea7924790729d596)
 - [Setup GitHub Verified Commits](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
+- `ssh s_besch@i08fs1.informatik.kit.edu lp -d pool-sw1 -o sides=two-sided-long-edge < file.pdf`
 
 # Install Instructions
 - push repos
@@ -43,7 +44,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy keepass files over
 - `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
 - install config
-- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb`
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript`
 - `yay mmv`
 
 - install ssh priv and pub key from keepass db
@@ -192,3 +193,10 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 
 # KiCad Hotkeys
 - repour: B
+
+# Fixed Weird PDF
+1. `gs -o Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf -sDEVICE=pdfwrite -dPDFFitPage -r300x300 -g2480x3507 Kap\ A_\ Folien_Waermeschutz.pdf`
+2. `pdftk Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf cat 1-40 41left 42 43-53left 54-55 56left 57 58-59left 60 61-66left 67-end output Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf`
+3. `gimp Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf` and export as `Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf`
+4. `pdfcomp Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf` aka `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"`
+
