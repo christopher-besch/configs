@@ -195,8 +195,8 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - repour: B
 
 # Fixed Weird PDF
-1. `gs -o Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf -sDEVICE=pdfwrite -dPDFFitPage -r300x300 -g2480x3507 Kap\ A_\ Folien_Waermeschutz.pdf`
-2. `pdftk Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf cat 1-40 41left 42 43-53left 54-55 56left 57 58-59left 60 61-66left 67-end output Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf`
-3. `gimp Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf` and export as `Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf`
-4. `pdfcomp Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf` aka `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"`
+1. remove crop: `gs -o Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf -sDEVICE=pdfwrite -dPDFFitPage -r300x300 -g2480x3507 Kap\ A_\ Folien_Waermeschutz.pdf`
+2. rotate landscape pages: `pdftk Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf cat 1-40 41left 42 43-53left 54-55 56left 57 58-59left 60 61-66left 67-end output Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf`
+3. turn into bitmap: `gimp Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf` and export as `Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf`
+4. compress: `pdfcomp Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf` aka `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"`
 
