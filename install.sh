@@ -65,9 +65,9 @@ if [[ $INSTALL_TYPE == "desktop" ]]; then
 
     echo
     echo "installing wacom scripts"
-    ln -fvs $DIR/wacom/wacom_normal "$HOME/.local/bin/wacom_normal"
-    ln -fvs $DIR/wacom/wacom_xournal "$HOME/.local/bin/wacom_xournal"
-    ln -fvs $DIR/wacom/wacom_inkscape "$HOME/.local/bin/wacom_inkscape"
+    sudo ln -fvs $DIR/wacom/wacom_normal "/usr/local/bin/wacom_normal"
+    sudo ln -fvs $DIR/wacom/wacom_xournal "/usr/local/bin/wacom_xournal"
+    sudo ln -fvs $DIR/wacom/wacom_inkscape "/usr/local/bin/wacom_inkscape"
     mkdir -p "$HOME/.local/share/applications"
     ln -fvs $DIR/wacom/wacom_xournal.desktop "$HOME/.local/share/applications/wacom_xournal.desktop"
     ln -fvs $DIR/wacom/wacom_inkscape.desktop "$HOME/.local/share/applications/wacom_inkscape.desktop"

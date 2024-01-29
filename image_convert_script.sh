@@ -34,4 +34,8 @@ function handle_dir() {
 }
 export -f handle_dir
 
-find . -name 'Christopher' -type d -exec bash -c "handle_dir '{}'" \;
+# copy chrris images
+# find . -name 'Christopher' -type d -exec bash -c "handle_dir '{}'" \;
+
+# copy alexander images
+find . -type f -execdir bash -c "handle_file '{}' ." \;
