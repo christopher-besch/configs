@@ -44,7 +44,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy keepass files over
 - `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
 - install config
-- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript`
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript avrdude avr-gcc avr-libc avr-gdb screen`
 - `yay mmv`
 
 - install ssh priv and pub key from keepass db
@@ -122,6 +122,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - disable pc speaker: https://wiki.archlinux.org/title/PC_speaker
 
 - set default file manager to `bash -c 'export str="%s" && kitty -d ${str#file://}'`
+- add `192.168.188.50 kuma.rasp01.fritz.box` to` `/etc/hosts`
 
 # GDB Commands
 - `tui enable`
