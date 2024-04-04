@@ -44,7 +44,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - copy keepass files over
 - `git clone https://github.com/christopher-besch/configs ~/.custom_configs`
 - install config
-- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript avrdude avr-gcc avr-libc avr-gdb screen jq`
+- `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript avrdude avr-gcc avr-libc avr-gdb screen jq pdfgrep`
 - `yay mmv`
 
 - install ssh priv and pub key from keepass db
@@ -200,4 +200,20 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 2. rotate landscape pages: `pdftk Kap\ A_\ Folien_Waermeschutz_fixed_size.pdf cat 1-40 41left 42 43-53left 54-55 56left 57 58-59left 60 61-66left 67-end output Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf`
 3. turn into bitmap: `gimp Kap\ A_\ Folien_Waermeschutz_fixed_size_rotated.pdf` and export as `Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf`
 4. compress: `pdfcomp Kap A_ Folien_Waermeschutz_fixed_size_rotated_gimped.pdf` aka `gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile="comp_$file" "$file"`
+
+# Revert Arch Grub Update
+- [link](https://www.reddit.com/r/archlinux/comments/wx90x4/latest_grub_update_testing_repo_couldnt_boot)
+- [without downgrade](https://forum.endeavouros.com/t/grub-2-2-06-r322-gd9b4638c5-1-wont-boot-and-goes-straight-to-the-bios-after-update/30653/60)
+
+1. Make a Live USB with archlinux (or archlinux based) and boot on it
+2. Mount your partitions (/, /home, /boot/efi... and so on)
+3. Use arch-chroot to "connect" as root. From now on, it's like your on your PC, from the cli
+4. Find the previous version number of grub by looking at the logs (grep -i upgrade /var/log/pacman.log | grep grub should do the trick)
+5. Locate the corresponding archive in /var/cache/pacman/pkg/ (find /var/cache/pacman/pkg/ -iname "grub*")
+6. Use pacman to downgrade (pacman -U /var/cache/pacman/pkg/grub-2:2... complete with the previous version number)
+7. If not done automatically, grub-mkconfig -o /boot/grub/grub.cfg
+8. Reboot
+
+1. `grub-mkconfig -o /boot/grub/grub.cfg`
+2. `grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=EndeavourOS-grub`
 
