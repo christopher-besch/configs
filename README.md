@@ -173,6 +173,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 4. move images to correct dir (select photographer for each image)
 5. enable external access to Hetzner storage box
 6. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/images` in `/home/chris/files/images/images`
+    or `rsync --dry-run --delete -avP . chris@nextcloud.chris-besch.com:/mnt/box03/images`
 7. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/images` in `/home/chris/files/images/images`
 8. disable external access to Hetzner storage box
 9. rescan Photoprism library
