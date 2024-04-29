@@ -90,10 +90,16 @@ lvim.builtin.which_key.vmappings["r"] = {
 }
 
 -- base64
-lvim.builtin.which_key.vmappings["b"] = {
+lvim.builtin.which_key.vmappings["6"] = {
     name = "b64",
     d = { ":'<,'>!base64 -d<CR>", "Decode b64" },
     e = { ":'<,'>!base64<CR>", "Encode b64" },
+}
+-- base32
+lvim.builtin.which_key.vmappings["3"] = {
+    name = "b32",
+    d = { ":'<,'>!base32 -d<CR>", "Decode b32" },
+    e = { ":'<,'>!base32<CR>", "Encode b32" },
 }
 
 -- hexdump
