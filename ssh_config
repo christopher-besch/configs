@@ -1,6 +1,9 @@
 Host github.com
     IdentityFile ~/.ssh/chris
 
+Host gitlab-ext.iosb.fraunhofer.de
+    IdentityFile ~/.ssh/chris
+
 Host nextcloud.chris-besch.com
     IdentityFile ~/.ssh/chris
 
