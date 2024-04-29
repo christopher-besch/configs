@@ -96,7 +96,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - delete cookies when firefox is closed
 - don't clear history
 - enable https only mode
-- Firefox cookie / Decentraleyes exceptions:
+- Firefox cookie / I don't care about cookies exceptions:
     - github.com
     - keyhero.com
     - web.whatsapp.com
@@ -107,6 +107,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     - nextcloud.chris-besch.com
     - photo.chris-besch.com
     - firefly.chris-besch.com
+    - gitlab-ext.iosb.fraunhofer.de
 - install bookmark backup
 - keyword.enabled: https://chris-besch.com/articles/installing_gentoo/#firefox
 
