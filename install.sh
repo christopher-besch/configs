@@ -116,7 +116,23 @@ EOF
     echo
     echo "installing Git config"
     # only append include when not already done
-    grep -E ' *path = .+/gitconfig_ibm$' ~/.gitconfig > /dev/null || printf "\n[includeIf \"hasconfig:remote.*.url:git@github.com:*/**\"]\n    path = $DIR/gitconfig_private\n[includeIf \"hasconfig:remote.*.url:git@gitlab-ext.iosb.fraunhofer.de:*/**\"]\n    path = $DIR/gitconfig_fraunhofer\n[includeIf \"hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**\"]\n    path = $DIR/gitconfig_ibm\n" >> ~/.gitconfig
+    grep -E ' *path = .+/gitconfig_ibm$' ~/.gitconfig > /dev/null || cat >> ~/.gitconfig <<EOL
+
+[credential]
+    helper = store
+[pull]
+    rebase = true
+[init]
+    defaultBranch = main
+
+# configs for different remotes
+[includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
+    path = $DIR/gitconfig_private
+[includeIf "hasconfig:remote.*.url:git@gitlab-ext.iosb.fraunhofer.de:*/**"]
+    path = $DIR/gitconfig_fraunhofer
+[includeIf "hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**"]
+    path = $DIR/gitconfig_ibm
+EOL
 
     echo
     echo "installing custom keyboard layout"

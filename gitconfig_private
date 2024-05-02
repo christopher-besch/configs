@@ -1,9 +1,3 @@
-[credential]
-    helper = store
 [user]
     email = mail@chris-besch.com
     name = christopher-besch
-[pull]
-    rebase = false
-[init]
-    defaultBranch = main

@@ -1,9 +1,3 @@
-[credential]
-    helper = store
 [user]
     email = christopher.besch@ibm.com
     name = cbesch
-[pull]
-    rebase = false
-[init]
-    defaultBranch = main
