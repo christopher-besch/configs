@@ -1,6 +1,9 @@
 Host github.com
     IdentityFile ~/.ssh/chris
 
+Host gitlab.kit.edu
+    IdentityFile ~/.ssh/chris
+
 Host gitlab-ext.iosb.fraunhofer.de
     IdentityFile ~/.ssh/chris
 
