@@ -124,6 +124,12 @@ EOF
     rebase = true
 [init]
     defaultBranch = main
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
 
 # copied from: https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
 [alias]

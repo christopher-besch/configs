@@ -1,3 +1,4 @@
 [user]
     email = christopher.besch@ibm.com
     name = cbesch
+    signingkey = ~/.ssh/dth_chris.pub

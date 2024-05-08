@@ -1,3 +1,4 @@
 [user]
     email = mail@chris-besch.com
     name = christopher-besch
+    signingkey = ~/.ssh/chris.pub
