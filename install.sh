@@ -144,7 +144,7 @@ EOF
 
 # configs for different remotes
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
-    path = $DIR/gitconfig_private
+    path = $DIR/gitconfig_github
 [includeIf "hasconfig:remote.*.url:git@gitlab-ext.iosb.fraunhofer.de:*/**"]
     path = $DIR/gitconfig_fraunhofer
 [includeIf "hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**"]
