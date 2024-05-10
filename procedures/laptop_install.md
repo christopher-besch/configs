@@ -3,11 +3,11 @@
 ## On Old Machine
 - save game screenshots
 - copy `/etc/NetworkManager/system-connections` into keepass db
+- create new laptop password
 - put keepass db on usb
 - create firefox bookmarks backup
 - download endeavouros and put on usb `sudo dd if=EndeavourOS_Gemini-2024.04.20.iso of=/dev/sda conv=fsync bs=4M status=progress`
     from [Kali USB Install](https://www.kali.org/docs/usb/live-usb-install-with-linux/#creating-a-bootable-kali-usb-drive-on-linux-dd-with-status)
-- create new password
 - push repos (don't forget `~/.custom_configs` and `~/.passwd`)
 - copy files to backup drive
 - say goodbye to your system for the last time
