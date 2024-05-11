@@ -10,6 +10,9 @@ Host gitlab-ext.iosb.fraunhofer.de
 Host nextcloud.chris-besch.com
     IdentityFile ~/.ssh/chris
 
+Host selchris-debian
+    IdentityFile ~/.ssh/chris
+
 Host rasp01.fritz.box
     IdentityFile ~/.ssh/chris
 
