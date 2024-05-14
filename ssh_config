@@ -1,25 +1,33 @@
 Host github.com
     IdentityFile ~/.ssh/chris
+    User git
 
 Host gitlab.kit.edu
     IdentityFile ~/.ssh/chris
+    User git
 
 Host gitlab-ext.iosb.fraunhofer.de
     IdentityFile ~/.ssh/chris
+    User git
 
 Host nextcloud.chris-besch.com
     IdentityFile ~/.ssh/chris
+    User chris
 
 Host selchris-debian
     IdentityFile ~/.ssh/chris
+    User selchris
 
 Host rasp01.fritz.box
     IdentityFile ~/.ssh/chris
+    User chris
 
 Host i08fs1.informatik.kit.edu
     IdentityFile ~/.ssh/chris
+    User s_besch
 
 Host *.your-storagebox.de
     IdentityFile ~/.ssh/chris
+    User u370909
     Port 23
 
