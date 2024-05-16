@@ -1,6 +1,5 @@
 -- disallow the mouse
 vim.opt.mouse = ""
-
 -- make the leader menue appear earlier
 vim.opt.timeoutlen = 100
 -- convert tabs to spaces
@@ -12,6 +11,7 @@ vim.opt.tabstop = 4
 -- set number column width to 3 {default 4}
 vim.opt.numberwidth = 3
 vim.opt.wrap = true
+vim.opt.relativenumber = true
 
 -- extra file types
 vim.filetype.add({
