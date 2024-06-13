@@ -29,10 +29,6 @@ echo "### installing chris' config for type: $INSTALL_TYPE ###"
 # desktop, server and ibm #
 ###########################
 echo
-echo "installing GDB config"
-ln -fvs $DIR/.gdbinit ~/.gdbinit
-
-echo
 echo "installing inputrc config"
 ln -fvs $DIR/.inputrc ~/.inputrc
 
@@ -40,13 +36,6 @@ echo
 echo "installing bashrc"
 # only append sourcing when not already done
 grep -E '^source .+/bashrc_(desktop|server)$' ~/.bashrc || echo "source $DIR/bashrc_$INSTALL_TYPE" >> ~/.bashrc
-
-echo
-echo "installing LunarVim config"
-mkdir -vp ~/.config/lvim ~/.config/lvim/{lsp-settings,spell}
-ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
-ln -fvs $DIR/eclipse_formatter.xml ~/.config/lvim/eclipse_formatter.xml
-ln -fvs $DIR/jdtls.json ~/.config/lvim/lsp-settings/jdtls.json
 
 ################
 # only desktop #
@@ -77,6 +66,18 @@ fi
 # only desktop and ibm #
 ########################
 if [[ $INSTALL_TYPE == "desktop" || $INSTALL_TYPE == "ibm" ]]; then
+    echo
+    echo "installing GDB config"
+    ln -fvs $DIR/.gdbinit ~/.gdbinit
+
+    echo
+    echo "installing LunarVim config"
+    mkdir -vp ~/.config/lvim ~/.config/lvim/{lsp-settings,spell}
+    ln -fvs $DIR/config.lua ~/.config/lvim/config.lua
+    ln -fvs $DIR/eclipse_formatter.xml ~/.config/lvim/eclipse_formatter.xml
+    ln -fvs $DIR/jdtls.json ~/.config/lvim/lsp-settings/jdtls.json
+
+
     echo
     echo "installing clang-format config"
     ln -fvs $DIR/.clang-format ~/.clang-format

@@ -117,10 +117,10 @@ __prompt_command() {
 
     if [ $EXIT != 0 ]; then
         # red when failed
-        # show hostname in server version
-        PS1="\[\033[01;31m\]\h \w \[\033[0m\]λ "
+        # show username and hostname in server version
+        PS1="\[\033[01;31m\]\u@\h \w \[\033[0m\]λ "
     else
-        PS1="\[\033[01;32m\]\h \w \[\033[0m\]λ "
+        PS1="\[\033[01;32m\]\u@\h \w \[\033[0m\]λ "
     fi
 
     return $EXIT
