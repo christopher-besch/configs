@@ -132,6 +132,12 @@ EOF
 [tag]
     gpgsign = true
 
+[core]
+    attributesfile = ~/.gitattributes
+
+[diff "pdfdiff"]
+    command = diffpdf
+
 # copied from: https://stackoverflow.com/questions/1838873/visualizing-branch-topology-in-git/34467298#34467298
 [alias]
     lg = lg1
@@ -151,6 +157,8 @@ EOF
 [includeIf "hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**"]
     path = $DIR/gitconfig_ibm
 EOL
+    
+    ln -fvs $DIR/gitattributes ~/.gitattributes
 
     echo
     echo "installing custom keyboard layout"
