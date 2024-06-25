@@ -98,7 +98,7 @@ EOF
 
     echo
     echo "installing font"
-    curl -o font.zip -L https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip
+    curl -o font.zip -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
     rm -r "$HOME/.local/share/fonts/JetBrains Mono" || true
     mkdir -vp "$HOME/.local/share/fonts/JetBrains Mono"
     mv -v font.zip "$HOME/.local/share/fonts/JetBrains Mono"
