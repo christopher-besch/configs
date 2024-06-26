@@ -12,7 +12,7 @@ Host gitlab-ext.iosb.fraunhofer.de
 
 Host nextcloud.chris-besch.com
     IdentityFile ~/.ssh/chris
-    User chris
+    User apprun
 
 Host selchris-debian
     IdentityFile ~/.ssh/chris
