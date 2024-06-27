@@ -24,6 +24,7 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - [Setup GitHub Verified Commits](https://gist.github.com/Beneboe/3183a8a9eb53439dbee07c90b344c77e)
 - [Wacom](https://www.youtube.com/watch?v=dzplf-0RJDE)
 - `ssh s_besch@i08fs1.informatik.kit.edu lp -d pool-sw1 -o sides=two-sided-long-edge < file.pdf`
+- http://studscan.informatik.kit.edu with `ssh -C2qTnND 8080 i08fs1.informatik.kit.edu`
 
 # GDB Commands
 - `tui enable`
