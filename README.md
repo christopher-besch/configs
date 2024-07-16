@@ -77,3 +77,13 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 1. `grub-mkconfig -o /boot/grub/grub.cfg`
 2. `grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=EndeavourOS-grub`
 
+# PDF Procedures
+### Multiple A5 on A4
+- `yay pdfjam pdfpages pdftk`
+- `pdftk Zusammenfassung_240716_091112.pdf cat 4-endright output rotated_last.pdf`
+- `pdftk Zusammenfassung_240716_091112.pdf cat 1-3 output first.pdf`
+- `ssh s_besch@i08fs1.informatik.kit.edu lp -d pool-sw3 < first.pdf`
+- `pdfjam rotated_last.pdf --nup 1x2 --outfile last.pdf`
+- gimp scaling
+- `ssh s_besch@i08fs1.informatik.kit.edu lp -d pool-farb1 -o sides=two-sided-long-edge < last_scaled.pdf`
+
