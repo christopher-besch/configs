@@ -14,6 +14,9 @@
 
 # upgrade commands
 # id3convert
+#
+# use: 
+# eyeD3 -r --rename '0$track:num - $title' .
 
 # borg commands
 # docker run --rm -ti -v /home/chris/files/music:/music chrisbesch/borg2
@@ -83,7 +86,7 @@ function jpg_to_png() {
 # apply correct track number
 function retrack() {
     CNT=0
-    for FILE in $(find $1 -name *.mp3); do
+    for FILE in $(find $1 -name '*.mp3'); do
         CNT=$(($CNT+1))
         echo $CNT $FILE
         eyeD3 --track $CNT "$FILE"
@@ -98,21 +101,11 @@ function retitle() {
     done
 }
 
-# apply correct file name
-function name_correct() {
-    find . -name '*.mp3' \
-        -printf 'echo $(exiftool -json "%p" | jq -r .[0].Track | python3 -c "print(str(int(input())).rjust(3, \\"0\\"))") "-" ' \
-        -printf '$(exiftool -json "%p" | jq -r .[0].Title) | ' \
-        -printf 'mv "%p" "%h/$(tee).mp3" && ' \
-        -printf 'echo "%p" \n' | \
-            sh
-}
-
 function clean_music() {
-    find "$1" -type f -name '*.mp3' -exec id3convert '{}' \;
-    eyeD3 -r --album-artist '' "$1"
+    eyeD3 --to-v2.4 -r .
+    # eyeD3 -r --album-artist '' "$1"
     eyeD3 -r --track-total 0 "$1"
-    eyeD3 -r --composer '' "$1"
+    # eyeD3 -r --composer '' "$1"
     eyeD3 -r --remove-all-images "$1"
 }
 
