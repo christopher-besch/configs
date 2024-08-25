@@ -109,6 +109,7 @@
     - nextcloud.chris-besch.com
     - photo.chris-besch.com
     - firefly.chris-besch.com
+    - discord.com
 - install bookmark backup
 - keyword.enabled: https://chris-besch.com/articles/installing_gentoo/#firefox
 
