@@ -102,6 +102,7 @@
     - keyhero.com
     - web.whatsapp.com
     - web.telegram.com
+    - web.telegram.org
     - kuma.rasp01.fritz.box
     - mc.chris-besch.com
     - recipe.chris-besch.com
