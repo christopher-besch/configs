@@ -10,6 +10,9 @@ The IBM version is a subset of the desktop version.
 3. and run `./install.sh server` or `./install.sh desktop`.
    (Warning: this script permanently overwrites your current configs.)
 
+# Updating Lvim
+- delete `~/.local/share/lvim`
+
 # Gentoo Config
 The [`gentoo` subdirectory](gentoo) contains my Gentoo configs.
 The same three-step plan applies to it, with an addition to the third:
