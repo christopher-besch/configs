@@ -49,6 +49,9 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     - in both other directions: shift+x, shift+y, shift+z
 - all to same hight: s z 0
 
+# Neovim Hotkeys
+- buffer to new Tab: `<C-w>T`
+
 # Solve Issues with Pacman Keys on EndeavourOS
 2. `sudo rm -r /etc/pacman.d/gnupg`
 3. `sudo pacman-key --init`
