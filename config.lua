@@ -1,6 +1,6 @@
 -- disallow the mouse
 vim.opt.mouse = ""
--- make the leader menue appear earlier
+-- make the leader menu appear earlier
 vim.opt.timeoutlen = 100
 -- convert tabs to spaces
 vim.opt.expandtab = true

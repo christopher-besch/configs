@@ -14,7 +14,7 @@
 13. copy files into `/home/chris/files/music`
 14. enable external access to Hetzner storage box
 15. check with `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music`
-16. `rsync --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music`
+16. `rsync --dry-run --delete -avP . u370909@u370909.your-storagebox.de:/home/nextcloud_lfs/selchris_music` in `/home/chris/files/music` (remove `--dry-run`)
 17. disable external access to Hetzner storage box
 18. `docker exec -ti --user www-data NCFrontend /var/www/html/occ files:scan --all` on Hetzner server
 19. rescan Music library
