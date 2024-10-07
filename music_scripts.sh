@@ -86,11 +86,13 @@ function jpg_to_png() {
 # apply correct track number
 function retrack() {
     CNT=0
-    for FILE in $(find $1 -name '*.mp3'); do
+    IFS=$'\n'
+    for FILE in $(find $1 -name '*.mp3' | sort -n); do
         CNT=$(($CNT+1))
         echo $CNT $FILE
         eyeD3 --track $CNT "$FILE"
     done
+    IFS=$' \n\t'
 }
 
 function retitle() {
