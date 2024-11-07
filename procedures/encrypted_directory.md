@@ -26,5 +26,13 @@
 - `sudo umount ~/mount`
 - `sudo cryptsetup close encrypted_img`
 
+# Resize Image
+- `truncate -s 40G image.img`
+- `sudo cryptsetup open image.img encrypted_img`
+- `sudo cryptsetup resize encrypted_img`
+- `sudo e2fsck -f /dev/mapper/encrypted_img`
+- `sudo resize2fs /dev/mapper/encrypted_img`
+
 # Sources
 - https://askubuntu.com/questions/667291/create-blank-disk-image-for-file-storage
+- https://unix.stackexchange.com/questions/751318/how-to-increase-the-size-of-a-luks-file-container
