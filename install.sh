@@ -98,7 +98,7 @@ EOF
 
     echo
     echo "installing font"
-    curl -o font.zip -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip
+    curl -o font.zip -L https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/JetBrainsMono.zip
     rm -r "$HOME/.local/share/fonts/JetBrains Mono" || true
     mkdir -vp "$HOME/.local/share/fonts/JetBrains Mono"
     mv -v font.zip "$HOME/.local/share/fonts/JetBrains Mono"
@@ -166,7 +166,27 @@ EOL
     echo "installing custom keyboard layout"
     # you might need to adjust /etc/default/keyboard
     sudo ln -fvs $DIR/chris_keyboard /usr/share/X11/xkb/symbols/chris_keyboard
-    setxkbmap chris_keyboard
+    cat <<EOF
+Add this to /usr/share/X11/xkb/rules/evdev.xml
+    <layout>
+      <configItem>
+        <name>chris_keyboard</name>
+        <!-- Keyboard indicator for English layouts -->
+        <shortDescription>chris_keyboard</shortDescription>
+        <description>English (GB, with Chris' extra keys)</description>
+        <countryList>
+          <iso3166Id>GB</iso3166Id>
+        </countryList>
+        <languageList>
+          <iso639Id>eng</iso639Id>
+        </languageList>
+      </configItem>
+    </layout>
+
+Add this to /usr/share/X11/xkb/rules/evdev.lst
+  chris_keyboard  English (GB, with Chris' extra keys)
+
+EOF
 fi
 
 echo

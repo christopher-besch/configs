@@ -169,6 +169,3 @@ __prompt_command() {
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-setxkbmap chris_keyboard
-
