@@ -16,7 +16,8 @@ vim.opt.relativenumber = true
 -- extra file types
 vim.filetype.add({
     extension = {
-        mima = "asm"
+        mima = "asm",
+        typ = "typst"
     }
 })
 
