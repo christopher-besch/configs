@@ -75,6 +75,12 @@ lvim.builtin.which_key.vmappings["3"] = {
     d = { ":'<,'>!base32 -d<CR>", "Decode b32" },
     e = { ":'<,'>!base32<CR>", "Encode b32" },
 }
+-- hex
+lvim.builtin.which_key.vmappings["x"] = {
+    name = "hex",
+    d = { ":'<,'>!xxd -r -p<CR>", "Decode hex" },
+    e = { ":'<,'>!xxd -p<CR>", "Encode hex" },
+}
 
 -- hexdump
 lvim.builtin.which_key.vmappings["h"] = { ":'<,'>!hexdump<CR>", "Hexdump" }
