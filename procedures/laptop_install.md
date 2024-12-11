@@ -25,7 +25,7 @@
 - install config
 - `sudo pacman -S xfce4-cpugraph-plugin xfce4-netload-plugin kitty gimp libreoffice-still-de kicad-library-3d kicad-library kicad strawberry audacity blender gthumb inkscape keepassxc thunderbird neovim obs-studio jdk-openjdk rawtherapee signal-desktop vlc tree exa docker docker-compose base-devel cmake git python3 vim xclip python-pynvim libwacom xf86-input-wacom xournalpp perl-image-exiftool bear gdb pdftk ghostscript avrdude avr-gcc avr-libc avr-gdb screen jq pdfgrep wireshark-qt ripgrep ansible ansible-lint`
 - `yay mmv`
-- `sudo apt install keepassxc xournalpp git curl exa mmv thunderbird vlc strawberry rsync gthumb default-jdk ripgrep python3-pynvim xclip pdfgrep`
+- `sudo apt install keepassxc xournalpp git curl exa mmv thunderbird vlc strawberry rsync gthumb default-jdk ripgrep python3-pynvim xclip pdfgrep imagemagick gimp rawtherapee inkscape tree cups-pdf sqlite3-tools gdb ansible ansible-lint bear xxd`
 
 - install ssh priv and pub key from keepass db
 - enable keepassxc browser integration for firefox
