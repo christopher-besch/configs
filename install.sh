@@ -158,6 +158,8 @@ EOF
     path = $DIR/gitconfig_fraunhofer
 [includeIf "hasconfig:remote.*.url:git@github.ibmgcloud.net:*/**"]
     path = $DIR/gitconfig_ibm
+[includeIf "hasconfig:remote.*.url:git@forgejo.staging.dth.ihost.com:*/**"]
+    path = $DIR/gitconfig_ibm
 EOL
     
     ln -fvs $DIR/gitattributes ~/.gitattributes
