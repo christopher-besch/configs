@@ -31,3 +31,7 @@ Host *.your-storagebox.de
     User u370909
     Port 23
 
+# raspberry pi
+Host 192.168.188.50
+    IdentityFile ~/.ssh/chris
+    User apprun
