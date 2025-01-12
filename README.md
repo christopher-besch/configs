@@ -51,6 +51,8 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 
 # Neovim Hotkeys
 - buffer to new Tab: `<C-w>T`
+- `:%s/\(\.\|?\|\!\) /\1\r/g`
+- `:%s/\_[kK]alman \_[fF]ilter/Kalman Filter/g`
 
 # Solve Issues with Pacman Keys on EndeavourOS
 2. `sudo rm -r /etc/pacman.d/gnupg`
