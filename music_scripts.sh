@@ -13,7 +13,8 @@
 # name: only title
 
 # upgrade commands
-# id3convert
+# eyeD3 --to-v2.4 -r .
+
 #
 # use: 
 # eyeD3 -r --rename '0$track:num - $title' .
@@ -106,7 +107,7 @@ function retitle() {
 function clean_music() {
     eyeD3 --to-v2.4 -r .
     # eyeD3 -r --album-artist '' "$1"
-    eyeD3 -r --track-total 0 "$1"
+    # eyeD3 -r --track-total 0 "$1"
     # eyeD3 -r --composer '' "$1"
     eyeD3 -r --remove-all-images "$1"
 }
