@@ -13,3 +13,6 @@ set record full insn-number-max unlimited
 
 # has to be set to correct include dir
 skip -gfi /usr/include/*
+
+# enable go debugging
+add-auto-load-safe-path /usr/local/go/src/runtime/runtime-gdb.py
