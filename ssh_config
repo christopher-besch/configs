@@ -2,6 +2,10 @@ Host github.com
     IdentityFile ~/.ssh/chris
     User git
 
+Host codeberg.org
+    IdentityFile ~/.ssh/chris
+    User git
+
 Host gitlab.kit.edu
     IdentityFile ~/.ssh/chris
     User git
