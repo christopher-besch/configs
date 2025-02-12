@@ -87,6 +87,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>F
     - photo.chris-besch.com
     - firefly.chris-besch.com
     - discord.com
+    - codeberg.org
 - install bookmark backup
 - keyword.enabled: false https://chris-besch.com/articles/installing_gentoo/#firefox
 - pdfjs.defaultZoomValue: page-fit: https://support.mozilla.org/en-US/questions/1074524
