@@ -24,21 +24,8 @@ vim.filetype.add({
 -- enable dart lsp (see https://github.com/LunarVim/LunarVim/issues/3919)
 require('lspconfig').dartls.setup {}
 
--- force spaces after formatting (mostly for golang)
-lvim.format_on_save = false
-lvim.autocommands = {
-    {
-        -- see `:h autocmd-events`
-        "BufWrite",
-        {
-            pattern = { "*" },
-            callback = function()
-                require("lvim.lsp.utils").format({})
-                vim.cmd("retab")
-            end
-        },
-    },
-}
+-- format on save
+lvim.format_on_save = true
 
 -- general
 lvim.colorscheme = "lunar"
