@@ -15,4 +15,4 @@ set record full insn-number-max unlimited
 skip -gfi /usr/include/*
 
 # enable go debugging
-add-auto-load-safe-path /usr/local/go/src/runtime/runtime-gdb.py
+add-auto-load-safe-path /usr/lib/golang/src/runtime/runtime-gdb.py
