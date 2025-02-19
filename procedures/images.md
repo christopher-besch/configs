@@ -17,4 +17,4 @@
 
 # Other Useful Stuff
 - `exiftool '-EXIF:DateTimeOriginal=2023-08-13-12-00' 001_{028..036}.jpg`
-
+- find . -maxdepth 1 -name '*.jpg' -printf 'convert %p -resize 1920 ./1920/%f\n' | sh
