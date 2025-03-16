@@ -1,5 +1,9 @@
 // tutorial from https://lukaszzagroba.com/creating-a-custom-keyboard-layout-in-linux/
+// xev -event keyboard
+// cat /usr/share/X11/xkb/keycodes/evdev | grep 180
 // umlauts from https://www.mkammerer.de/blog/custom-keyboard-layouts-with-linux/
+// https://superuser.com/questions/1460984/how-to-get-a-list-of-valid-x11-names-for-characters
+// cat /usr/include/X11/keysymdef.h | less
 
 xkb_symbols "chris_keyboard" {
     include "gb(basic)"
@@ -24,6 +28,11 @@ xkb_symbols "chris_keyboard" {
     // en-dash
     key <AB06> {        [         n,    N,     endash                           ]       };
 
+    // λ Λ
+    key <AC09> {        [         l,    L,     Greek_lambda,    Greek_LAMBDA    ]       };
+
+    // ⊥ ⊤
+    key <AD05> {        [         t,    T,     uptack,          downtack        ]       };
+
     include "level3(ralt_switch)"
 };
-
