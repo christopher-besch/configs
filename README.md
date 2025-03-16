@@ -95,3 +95,15 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 - gimp scaling
 - `ssh s_besch@i08fs1.informatik.kit.edu lp -d pool-farb1 -o sides=two-sided-long-edge < last_scaled.pdf`
 
+# red sections in pdf
+- `pdftk edited_script.pdf burst`
+- `rm pg_0{001..176}.pdf`
+- `for filename in pg_*.pdf; do convert $filename -colorspace RGB -format %c -depth 8 histogram:info:- | grep -i '#ff0000' || rm $filename ; done`
+- `firefox pg_*.pdf`
+
+# download files from file
+- `while read URL; do yt-dlp "$URL"; done < sources.txt`
+- `while read URL; do echo "$URL" && curl -s "$URL" | htmlq 'meta[property="og:image"]' --attribute content | xargs curl -O; done < <(grep https://example.com sources.txt)`
+
+# Other
+- `cat diary.md | grep '### ' | sed 's/### \(.\+\), \(.\+\) \(.\+\) \(.\+\)/\1/g' | sort | uniq -c`
