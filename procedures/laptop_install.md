@@ -85,6 +85,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>F
     - recipe.chris-besch.com
     - nextcloud.chris-besch.com
     - photo.chris-besch.com
+    - code.chris-besch.com
     - firefly.chris-besch.com
     - discord.com
     - codeberg.org
