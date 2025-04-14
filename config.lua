@@ -36,6 +36,13 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
+-- TODO: remove training
+-- lvim.keys.normal_mode["h"] = ":<CR>"
+-- lvim.keys.normal_mode["l"] = ":<CR>"
+-- lvim.keys.normal_mode["b"] = ":<CR>"
+-- lvim.keys.normal_mode["w"] = ":<CR>"
+-- lvim.keys.normal_mode["e"] = ":<CR>"
+
 -- spelling
 -- you might have to download from https://ftp.nluug.nl/pub/vim/runtime/spell/de.utf-8.spl into https://neovim.io/doc/user/options.html#'runtimepath'
 lvim.builtin.which_key.mappings["r"] = { "<cmd>set invspell<CR>", "Toggle Spell" }
