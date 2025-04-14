@@ -73,6 +73,8 @@ alias ll='exa --icons --group-directories-first -alF'
 alias la='exa --icons --group-directories-first -a'
 alias fox='firefox'
 
+alias bat='batcat'
+
 # move through folders with j and k
 function j() {
     # add current dir to stack
