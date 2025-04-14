@@ -39,3 +39,8 @@ Host *.your-storagebox.de
 Host 192.168.188.50
     IdentityFile ~/.ssh/chris
     User apprun
+
+Host code.chris-besch.com
+    IdentityFile ~/.ssh/chris
+    User git
+    Port 222
