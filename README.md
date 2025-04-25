@@ -107,3 +107,10 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
 
 # Other
 - `cat diary.md | grep '### ' | sed 's/### \(.\+\), \(.\+\) \(.\+\) \(.\+\)/\1/g' | sort | uniq -c`
+
+# VSC
+```json
+{
+    "keyboard.dispatch": "keyCode"
+}
+```
