@@ -152,6 +152,7 @@ EOF
     pushf = push --force-with-lease
 
 # configs for different remotes
+# TODO: support urls with prefix ssh://
 [includeIf "hasconfig:remote.*.url:git@github.com:*/**"]
     path = $DIR/gitconfig_github
 [includeIf "hasconfig:remote.*.url:git@gitlab-ext.iosb.fraunhofer.de:*/**"]
@@ -163,6 +164,8 @@ EOF
 [includeIf "hasconfig:remote.*.url:git@codeberg.org:*/**"]
     path = $DIR/gitconfig_github
 [includeIf "hasconfig:remote.*.url:git@code.chris-besch.com:*/**"]
+    path = $DIR/gitconfig_github
+[includeIf "hasconfig:remote.*.url:git@gitlab.kit.edu:*/**"]
     path = $DIR/gitconfig_github
 EOL
     
