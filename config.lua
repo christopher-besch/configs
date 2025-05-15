@@ -35,6 +35,8 @@ lvim.leader = "space"
 -- buffer cycling
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<A-,>"] = ":BufferLineMovePrev<CR>"
+lvim.keys.normal_mode["<A-.>"] = ":BufferLineMoveNext<CR>"
 
 -- TODO: remove training
 -- lvim.keys.normal_mode["h"] = ":<CR>"
