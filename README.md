@@ -114,3 +114,6 @@ You have to run the `install.sh` script with root privileges (with `sudo`).
     "keyboard.dispatch": "keyCode"
 }
 ```
+
+# Bash Commands
+- `cut -f1 -d ' ' lsof_250509.txt | sort | uniq -c | sort -g`
