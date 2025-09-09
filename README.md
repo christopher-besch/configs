@@ -1,3 +1,5 @@
+# Migrated to: https://codeberg.org/christopher-besch/configs
+
 # Chris' Configs
 The `install.sh` script symlinks the dotfiles in this directory to wherever they belong.
 There's a server, a desktop and an IBM version.
